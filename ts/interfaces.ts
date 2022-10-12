@@ -1,0 +1,34 @@
+import { TEventTypes } from "./types";
+
+export default interface IPage {
+  children: JSX.Element | JSX.Element[];
+}
+
+export interface IBasicWorkshopObj {
+  unique_id?: number;
+  path: string;
+  name: string;
+  db_table_name: string;
+  email_template_id: number;
+  start_date: string;
+  workshop_dates: string[];
+  price_sale: number;
+  price_normal: number;
+  price_date: string;
+  level: 1 | 2 | 3 | 4;
+  is_active: boolean;
+}
+
+export interface IEventObj {
+  unique_ID?: number;
+  title: string | null;
+  customClass: TEventTypes;
+  date: string | null;
+  time: string | null;
+  description: string | null;
+  place: string | null;
+  price: string | null;
+  link: string | null;
+  linkTitle: string | null;
+  aditionalLink: string | null;
+}
