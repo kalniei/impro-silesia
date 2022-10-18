@@ -1,4 +1,4 @@
-import { TEventTypes } from "./types";
+import { TEventTypes } from './types';
 
 export default interface IPage {
   children: JSX.Element | JSX.Element[];
@@ -10,12 +10,15 @@ export interface IBasicWorkshopObj {
   name: string;
   db_table_name: string;
   email_template_id: number;
-  start_date: string;
+  day_of_week: string;
   workshop_dates: string[];
-  price_sale: number;
+  duration: number;
+  time: string;
+  price_sale?: number;
   price_normal: number;
   price_date: string;
   level: 1 | 2 | 3 | 4;
+  additional_info: string;
   is_active: boolean;
 }
 
