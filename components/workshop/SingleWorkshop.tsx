@@ -136,12 +136,31 @@ const SingleWorkshopPage = (): JSX.Element => {
                         <CalendarMonthIcon sx={{ fontSize: 50 }} />
                       </Grid>
                       <Grid item ml={1} pt={0}>
+                        <Typography
+                          variant="h6"
+                          sx={{
+                            fontSize: 14,
+                            fontWeight: 700,
+                            borderRadius: 1,
+                            backgroundColor: 'orange'
+                          }}
+                        >
+                          {
+                            workshopDetails.workshop_dates.map((item, i) => (
+                              <option key={i} value={item}>
+                                {item}
+                              </option>
+                            ))[0]
+                          }
+                        </Typography>
                         <Typography variant="h6" sx={{ fontSize: 14, fontWeight: 700 }}>
-                          {workshopDetails.workshop_dates.map((item, i) => (
-                            <option key={i} value={item}>
-                              {item}
-                            </option>
-                          ))}
+                          {workshopDetails.workshop_dates
+                            .map((item, i) => (
+                              <option key={i} value={item}>
+                                {item}
+                              </option>
+                            ))
+                            .slice(1, workshopDetails.workshop_dates.length)}
                         </Typography>
                       </Grid>
                     </Grid>
