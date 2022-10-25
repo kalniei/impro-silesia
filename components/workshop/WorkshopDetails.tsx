@@ -2,16 +2,13 @@ import { Grid, Typography } from '@mui/material';
 import { IBasicWorkshopObj } from '../../ts/interfaces';
 import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import CreditCardIcon from '@mui/icons-material/CreditCard';
 import Colors from '../../helpers/Colors';
 import { makeStyles } from '@material-ui/core/styles';
+import Image from 'next/image';
 
 const useStyles = makeStyles(() => ({
   orangeText: {
     color: Colors.mainOrange
-  },
-  icon: {
-    fontSize: '50px'
   }
 }));
 
@@ -27,7 +24,7 @@ const WorkshopDetails = ({ workshopDetails }: PageProps): JSX.Element => {
       <Grid item xs={6}>
         <Grid container alignItems="center">
           <Grid item>
-            <WatchLaterOutlinedIcon className={classes.icon} />
+            <Image src="/img/clock.png" width="50px" height="50px" alt="clock" />
           </Grid>
           <Grid item ml={1}>
             <Typography variant="h5" className={classes.orangeText}>
@@ -39,7 +36,7 @@ const WorkshopDetails = ({ workshopDetails }: PageProps): JSX.Element => {
 
         <Grid container alignItems="center" mt={4}>
           <Grid item>
-            <CreditCardIcon className={classes.icon} />
+            <Image src="/img/wallet.png" width="50px" height="50px" alt="wallet" />
           </Grid>
           <Grid item ml={1}>
             <Typography variant="h5" className={classes.orangeText}>
@@ -53,7 +50,7 @@ const WorkshopDetails = ({ workshopDetails }: PageProps): JSX.Element => {
       <Grid item xs={6} pl={1}>
         <Grid container>
           <Grid item>
-            <CalendarMonthIcon className={classes.icon} />
+            <Image src="/img/calendar.png" width="50px" height="50px" alt="calendar" />
           </Grid>
           <Grid item ml={1} pt={0}>
             <>
@@ -73,7 +70,7 @@ const WorkshopDetails = ({ workshopDetails }: PageProps): JSX.Element => {
         </Grid>
       </Grid>
 
-      <Grid item mt={4}>
+      <Grid item xs={10} mt={4}>
         {workshopDetails.additional_info?.map((item, i) => (
           <Typography key={i} variant="subtitle2">
             - {item}

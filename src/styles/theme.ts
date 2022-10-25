@@ -15,6 +15,18 @@ declare module '@mui/material/styles' {
     basic?: PaletteOptions['primary'];
   }
 }
+
+declare module '@mui/material/TextField' {
+  interface TextFieldPropsColorOverrides {
+    neutral: true;
+  }
+}
+
+declare module '@mui/material/Checkbox' {
+  interface CheckboxPropsColorOverrides {
+    neutral: true;
+  }
+}
 declare module '@mui/material/Button' {
   interface ButtonPropsColorOverrides {
     neutral: true;
@@ -40,7 +52,7 @@ const theme = createTheme({
       main: red.A400
     },
     neutral: {
-      main: Colors.white,
+      main: Colors.mainNatural,
       contrastText: Colors.black
     },
     basic: {

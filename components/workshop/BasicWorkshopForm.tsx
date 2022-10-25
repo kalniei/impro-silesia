@@ -10,7 +10,6 @@ import {
 } from '@mui/material';
 import { IBasicWorkshopObj, IUserObj } from '../../ts/interfaces';
 import Colors from '../../helpers/Colors';
-import { makeStyles } from '@material-ui/core/styles';
 import { useEffect, useState } from 'react';
 import useSnackbar from '../../snackbar/useSnackbar';
 import { Controller, useForm } from 'react-hook-form';
@@ -24,6 +23,7 @@ import {
   TipsAndUpdates as TipsAndUpdatesIcon
 } from '@mui/icons-material/';
 import { createPaymentLink } from '../../helpers/createPaymentLink';
+import { makeStyles } from '@material-ui/core/styles';
 
 interface PageProps {
   workshopDetails: IBasicWorkshopObj;
@@ -40,6 +40,21 @@ const defaultValues: IUserObj = {
   date: new Date()
 };
 
+const useStyles = makeStyles((theme) => ({
+  textField: {
+    borderBottomColor: Colors.mainNatural
+  },
+  input: {
+    color: Colors.mainNatural
+  },
+  checkBox: {
+    color: Colors.mainNatural,
+    '&.Mui-checked': {
+      color: Colors.mainNatural
+    }
+  }
+}));
+
 const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
   const [rodoCheck, setRodoCheck] = useState<boolean>(false);
@@ -47,6 +62,8 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
   const [regulationCheck, setRegulationCheck] = useState<boolean>(false);
 
   const snackbar = useSnackbar();
+
+  const classes = useStyles();
 
   const {
     control,
@@ -114,7 +131,14 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
     }
   };
   return (
-    <Grid container>
+    <Grid
+      container
+      sx={{
+        backgroundColor: Colors.lightBlack,
+        p: 3,
+        borderRadius: 8
+      }}
+    >
       <form autoComplete="off">
         <Grid container spacing={2} justifyContent="space-between" alignItems="flex-end">
           <Grid item xs={12} md={6} mt={1}>
@@ -127,6 +151,8 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
               render={({ field }) => (
                 <TextField
                   variant="standard"
+                  color="neutral"
+                  focused
                   {...field}
                   placeholder="Imię"
                   fullWidth
@@ -136,9 +162,10 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <InsertEmoticonIcon sx={{ color: Colors.lightOrange }} />
+                        <InsertEmoticonIcon sx={{ color: Colors.mainNatural }} />
                       </InputAdornment>
-                    )
+                    ),
+                    className: classes.input
                   }}
                 />
               )}
@@ -154,6 +181,8 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
               render={({ field }) => (
                 <TextField
                   variant="standard"
+                  color="neutral"
+                  focused
                   {...field}
                   placeholder="Nazwisko"
                   fullWidth
@@ -164,9 +193,10 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <InsertEmoticonIcon sx={{ color: Colors.lightOrange }} />
+                        <InsertEmoticonIcon sx={{ color: Colors.mainNatural }} />
                       </InputAdornment>
-                    )
+                    ),
+                    className: classes.input
                   }}
                 />
               )}
@@ -190,6 +220,8 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
               render={({ field }) => (
                 <TextField
                   variant="standard"
+                  color="neutral"
+                  focused
                   {...field}
                   placeholder="E-mail"
                   fullWidth
@@ -200,9 +232,10 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <EmailIcon sx={{ color: Colors.lightOrange }} />
+                        <EmailIcon sx={{ color: Colors.mainNatural }} />
                       </InputAdornment>
-                    )
+                    ),
+                    className: classes.input
                   }}
                 />
               )}
@@ -218,6 +251,8 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
               render={({ field }) => (
                 <TextField
                   variant="standard"
+                  color="neutral"
+                  focused
                   {...field}
                   placeholder="Telefon"
                   error={!!errors?.phone}
@@ -227,9 +262,10 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <PhoneIcon sx={{ color: Colors.lightOrange }} />
+                        <PhoneIcon sx={{ color: Colors.mainNatural }} />
                       </InputAdornment>
-                    )
+                    ),
+                    className: classes.input
                   }}
                 />
               )}
@@ -242,15 +278,18 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
               render={({ field }) => (
                 <TextField
                   variant="standard"
+                  color="neutral"
+                  focused
                   {...field}
                   placeholder="Tutaj jest miejsce, jeśli chciałbyś/chciałabyś coś dodać"
                   fullWidth
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <TipsAndUpdatesIcon sx={{ color: Colors.lightOrange }} />
+                        <TipsAndUpdatesIcon sx={{ color: Colors.mainNatural }} />
                       </InputAdornment>
-                    )
+                    ),
+                    className: classes.input
                   }}
                 />
               )}
@@ -264,11 +303,11 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
                   onChange={() => {
                     setRodoCheck(!rodoCheck);
                   }}
-                  color="primary"
+                  className={classes.checkBox}
                 />
               }
               label={
-                <Typography variant="subtitle2" fontSize={10}>
+                <Typography variant="subtitle2" color={Colors.mainNatural} fontSize={10}>
                   Wyrażam zgodę na przetwarzanie danych osobowych dla potrzeb niezbędnych do
                   przesyłania informacji związanych z warsztatami Impro Silesia*
                 </Typography>
@@ -282,11 +321,11 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
                   onChange={() => {
                     setRegulationCheck(!regulationCheck);
                   }}
-                  color="primary"
+                  className={classes.checkBox}
                 />
               }
               label={
-                <Typography variant="subtitle2" fontSize={10}>
+                <Typography variant="subtitle2" color={Colors.mainNatural} fontSize={10}>
                   Oświadczam, że zapoznałem się z{' '}
                   <a href="/rodo_informacja/" target="blank">
                     informacjami
@@ -308,11 +347,11 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
                   onChange={() => {
                     setPaymentCheck(!paymentCheck);
                   }}
-                  color="primary"
+                  className={classes.checkBox}
                 />
               }
               label={
-                <Typography variant="subtitle2" fontSize={10}>
+                <Typography variant="subtitle2" color={Colors.mainNatural} fontSize={10}>
                   Oświadczam, że zapoznałem się z{' '}
                   <a href="https://www.przelewy24.pl/regulamin" target="blank">
                     regulaminem
