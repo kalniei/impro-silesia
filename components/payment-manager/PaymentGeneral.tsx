@@ -6,18 +6,13 @@ import getErrorMessage from '../../helpers/getErrorMessage';
 import { request } from '../../helpers/restClient';
 import useSnackbar from '../../snackbar/useSnackbar';
 import { IBasicWorkshopObj } from '../../ts/interfaces';
-import axios, { AxiosResponse, AxiosError } from 'axios';
-import moment from 'moment-mini-ts';
-
-const instance = axios.create();
+import { createPaymentLink, getPrice } from '../../helpers/createPaymentLink';
 
 const PaymentGeneral = (): JSX.Element => {
   const [workshopDetails, setWorkshopDetails] = useState<IBasicWorkshopObj | null>(null);
   const [isError, setIsError] = useState<boolean>(false);
   const [rodoCheck, setRodoCheck] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
-  const [sessionId, setSessionId] = useState<string>('');
 
   const router = useRouter();
   const snackbar = useSnackbar();
@@ -27,80 +22,6 @@ const PaymentGeneral = (): JSX.Element => {
     handleSubmit,
     formState: { errors }
   } = useForm();
-
-  const getPrice = (): number => {
-    if (!workshopDetails) return 0;
-    if (!workshopDetails.price_date || !workshopDetails.price_sale)
-      return workshopDetails.price_normal;
-
-    const saleDate = moment(workshopDetails?.price_date, 'DD/MM/YYYY');
-
-    return !moment().isAfter(saleDate, 'day')
-      ? workshopDetails.price_sale
-      : workshopDetails.price_normal;
-  };
-
-  const generateSessionId = (): string => {
-    return '_' + Math.random().toString(36).substr(2, 9);
-  };
-
-  const generateSign = async (formData: any) => {
-    try {
-      const { data } = await request('post', '/sha384Code', {
-        sessionId: sessionId,
-        merchantId: Number(process.env.NEXT_PUBLIC_MERCHANT_ID),
-        amount: Number(getPrice() + '00'),
-        currency: 'PLN',
-        crc: process.env.NEXT_PUBLIC_CRC_KEY
-      });
-
-      startRegistartion(formData, data);
-    } catch (error: any) {
-      snackbar.showMessage(
-        getErrorMessage(error, 'Coś poszło nie tak z wygenerowaniem znaku'),
-        'error'
-      );
-      return;
-    }
-  };
-
-  const startRegistartion = async (data: any, sign: string) => {
-    const basicAuth =
-      'Basic ' +
-      Buffer.from(
-        process.env.NEXT_PUBLIC_MERCHANT_ID + ':' + '546850019766733902dd563fb07fafde'
-      ).toString('base64');
-
-    const tempObj = {
-      merchantId: process.env.NEXT_PUBLIC_MERCHANT_ID,
-      posId: process.env.NEXT_PUBLIC_MERCHANT_ID,
-      sessionId: sessionId,
-      amount: getPrice() + '00',
-      currency: 'PLN',
-      description: workshopDetails?.name,
-      transferLabel: workshopDetails?.name,
-      email: data?.email,
-      client: data?.name_surname,
-      regulationAccept: true,
-      country: 'PL',
-      language: 'pl',
-      urlStatus: process.env.NEXT_PUBLIC_API_URL + '/transactionVerification',
-      urlReturn: 'http://localhost:3000/payment/confirmation',
-      sign: sign
-    };
-
-    instance
-      .post(process.env.NEXT_PUBLIC_PAYMENT_API + '/api/v1/transaction/register', tempObj, {
-        headers: { Authorization: basicAuth }
-      })
-      .then(({ data: response }: AxiosResponse) => {
-        const link = process.env.NEXT_PUBLIC_PAYMENT_API + `/trnRequest/${response.data.token}`;
-        window.location.replace(link);
-      })
-      .catch((error: AxiosError) => {
-        console.log(error);
-      });
-  };
 
   const getWorkshopDetails = async (id: string) => {
     try {
@@ -115,13 +36,25 @@ const PaymentGeneral = (): JSX.Element => {
     }
   };
 
+  const redirectToPayment = async (formData: { email: string; name_surname: string }) => {
+    if (!workshopDetails) return;
+    try {
+      const generatedLink = await createPaymentLink(formData, workshopDetails);
+      window.location.replace(generatedLink);
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false);
+      snackbar.showMessage('Coś poszło nie tak z realizacją płatności', 'error');
+    }
+  };
+
   const onSubmit = (data: any) => {
     if (!rodoCheck) {
       snackbar.showMessage('Zaznacz że przeczytałeś regulamin!', 'error');
       return;
     }
     setIsLoading(true);
-    generateSign(data);
+    redirectToPayment(data);
   };
 
   useEffect(() => {
@@ -134,10 +67,6 @@ const PaymentGeneral = (): JSX.Element => {
     }
   }, [router.isReady]);
 
-  useEffect(() => {
-    setSessionId(generateSessionId());
-  }, []);
-
   return (
     <Grid container justifyContent="center" m={2}>
       {workshopDetails && (
@@ -149,7 +78,8 @@ const PaymentGeneral = (): JSX.Element => {
 
             <Typography mb={2}>
               Żeby rozpociąć płatność za <b>{workshopDetails?.name}</b> w rozmiarze{' '}
-              <b>{getPrice()} zł</b>, wprowadź niezbędne informacje i przeczytaj regulamin.
+              <b>{getPrice(workshopDetails)} zł</b>, wprowadź niezbędne informacje i przeczytaj
+              regulamin.
             </Typography>
           </Grid>
           <Grid item xs={6} pl={2}>

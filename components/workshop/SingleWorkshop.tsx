@@ -68,10 +68,11 @@ const SingleWorkshop = (): JSX.Element => {
   }, [router.isReady]);
 
   return (
-    <Grid container justifyContent="center" m={2}>
+    <Grid container justifyContent="center" p={2}>
       {workshopDetails && (
-        <Grid container item xs={11}>
+        <Grid container item xs={12}>
           <Accordion
+            className="maxWidth"
             expanded={expanded}
             onChange={() => {
               if (router?.query?.id) return;
@@ -90,10 +91,10 @@ const SingleWorkshop = (): JSX.Element => {
             </AccordionSummary>
             <AccordionDetails>
               <Grid container>
-                <Grid item xs={6}>
+                <Grid item xs={12} md={6}>
                   <WorkshopDetails workshopDetails={workshopDetails} />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12} md={6}>
                   <BasicWorkshopForm workshopDetails={workshopDetails} />
                 </Grid>
               </Grid>

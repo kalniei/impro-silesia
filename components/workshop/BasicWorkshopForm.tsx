@@ -1,6 +1,7 @@
 import {
   Button,
   Checkbox,
+  CircularProgress,
   FormControlLabel,
   Grid,
   InputAdornment,
@@ -22,6 +23,7 @@ import {
   Phone as PhoneIcon,
   TipsAndUpdates as TipsAndUpdatesIcon
 } from '@mui/icons-material/';
+import { createPaymentLink } from '../../helpers/createPaymentLink';
 
 interface PageProps {
   workshopDetails: IBasicWorkshopObj;
@@ -67,14 +69,15 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
         'Udało Ci się zapisac na warsztaty. Za chwilę zostaniesz przekierowany na strone płatności!',
         'success'
       );
+
+      redirectToPayment(formData);
     } catch (error: any) {
       snackbar.showMessage(
         getErrorMessage(error, 'Coś poszło nie tak podczas zapisywania się na warsztaty'),
         'error'
       );
-      return;
-    } finally {
       setIsProcessing(false);
+      return;
     }
   };
 
@@ -94,6 +97,22 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
     });
   }, [workshopDetails]);
 
+  const redirectToPayment = async (formData: IUserObj) => {
+    try {
+      const generatedLink = await createPaymentLink(
+        {
+          email: formData.mail,
+          name_surname: `${formData.name} ${formData.surname}`
+        },
+        workshopDetails
+      );
+      window.location.replace(generatedLink);
+    } catch (error) {
+      console.log(error);
+      setIsProcessing(false);
+      snackbar.showMessage('Coś poszło nie tak z realizacją płatności', 'error');
+    }
+  };
   return (
     <Grid container>
       <form autoComplete="off">
@@ -317,7 +336,7 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
           disabled={isProcessing}
           sx={{ width: '100%' }}
         >
-          Zapisuję się i płacę
+          {isProcessing ? <CircularProgress /> : 'Zapisuję się i płacę'}
         </Button>
       </Grid>
     </Grid>
