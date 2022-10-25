@@ -1,5 +1,8 @@
 enum Colors {
+  grey='#828282',
   darkGrey = '#54595F',
+  black = '#000000',
+  white = '#ffffff',
   mainOrange = '#f39000',
   darkOrange = '#ff6c00',
   mainNatural = '#F6F4F4'

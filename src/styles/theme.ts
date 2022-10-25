@@ -16,19 +16,19 @@ const theme = createTheme({
     }
   },
   typography: {
-    fontFamily: 'Montserrat',
+    fontFamily: 'Asap',
     fontSize: 14,
     h1: {
-      color: Colors.darkGrey,
+      color: Colors.black,
       fontWeight: 600,
-      fontSize: '20px',
+      fontSize: '24px',
       lineHeight: '18px',
       padding: '16px 0'
     },
     h2: {
-      color: Colors.darkGrey,
-      fontSize: `18px`,
-      fontWeight: 500,
+      color: Colors.black,
+      fontSize: `22px`,
+      fontWeight: 800,
       textTransform: 'uppercase',
       paddingBottom: 0
     },
@@ -44,16 +44,13 @@ const theme = createTheme({
       paddingBottom: '16px'
     },
     h5: {
-      textTransform: 'uppercase',
-      fontWeight: 600,
-      fontSize: '16px',
-      padding: '24px 0'
+      fontWeight: 700,
+      fontSize: '17px',
     },
-    subtitle1: {
-      color: Colors.darkGrey,
-      fontWeight: 500,
-      fontSize: '13px',
-      padding: '8px 0'
+    subtitle2: {
+      color: Colors.grey,
+      fontWeight: 600,
+      fontSize: '14px',
     }
   }
 });
