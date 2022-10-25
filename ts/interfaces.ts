@@ -1,7 +1,18 @@
-import { TEventTypes } from './types';
+import { TEventTypes, TLevelTypes } from './types';
 
 export default interface IPage {
   children: JSX.Element | JSX.Element[];
+}
+
+export interface IUserObj {
+  date: string | Date;
+  level: TLevelTypes;
+  mail: string;
+  name: string;
+  notes: string;
+  paid: string;
+  phone: string;
+  surname: string;
 }
 
 export interface IBasicWorkshopObj {
@@ -16,7 +27,7 @@ export interface IBasicWorkshopObj {
   time: string;
   price_sale?: number;
   price_normal: number;
-  price_date: string;
+  price_date?: string;
   level: 1 | 2 | 3 | 4;
   additional_info: string[];
   is_active: boolean;

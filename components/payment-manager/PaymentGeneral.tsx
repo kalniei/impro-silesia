@@ -30,7 +30,9 @@ const PaymentGeneral = (): JSX.Element => {
 
   const getPrice = (): number => {
     if (!workshopDetails) return 0;
-    const today = moment();
+    if (!workshopDetails.price_date || !workshopDetails.price_sale)
+      return workshopDetails.price_normal;
+
     const saleDate = moment(workshopDetails?.price_date, 'DD/MM/YYYY');
 
     return !moment().isAfter(saleDate, 'day')
