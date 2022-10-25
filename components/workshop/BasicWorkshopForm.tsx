@@ -95,7 +95,7 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
   }, [workshopDetails]);
 
   return (
-    <Grid container item mt={4}>
+    <Grid container>
       <form autoComplete="off">
         <Grid container spacing={2} justifyContent="space-between" alignItems="flex-end">
           <Grid item xs={12} md={6} mt={1}>
@@ -310,7 +310,7 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
           </Grid>
         </Grid>
       </form>
-      <Grid item xs={12} mt={3}>
+      <Grid item xs={12} my={2}>
         <Button
           variant="custom"
           onClick={handleSubmit(onSubmit)}

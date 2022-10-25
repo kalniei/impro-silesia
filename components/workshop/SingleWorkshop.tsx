@@ -1,17 +1,38 @@
-import { CardContent, Grid, Typography } from '@mui/material';
+import {
+  Grid,
+  Typography,
+  Accordion,
+  AccordionDetails,
+  AccordionSummaryProps
+} from '@mui/material';
 import { useRouter } from 'next/dist/client/router';
 import { useEffect, useState } from 'react';
 import getErrorMessage from '../../helpers/getErrorMessage';
 import { request } from '../../helpers/restClient';
 import useSnackbar from '../../snackbar/useSnackbar';
 import { IBasicWorkshopObj } from '../../ts/interfaces';
-import { Card } from '@mui/material';
 import WorkshopDetails from './WorkshopDetails';
 import BasicWorkshopForm from './BasicWorkshopForm';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import { styled } from '@mui/material/styles';
+import MuiAccordionSummary from '@mui/material/AccordionSummary';
+
+const AccordionSummary = styled((props: AccordionSummaryProps) => (
+  <MuiAccordionSummary
+    expandIcon={<ArrowDropUpIcon color="primary" fontSize="large" />}
+    {...props}
+  />
+))(() => ({
+  justifyContent: 'left',
+  '& .MuiAccordionSummary-content': {
+    flexGrow: 0
+  }
+}));
 
 const SingleWorkshop = (): JSX.Element => {
   const [workshopDetails, setWorkshopDetails] = useState<IBasicWorkshopObj | null>(null);
   const [isError, setIsError] = useState<boolean>(false);
+  const [expanded, setExpanded] = useState<boolean>(true);
 
   const router = useRouter();
   const snackbar = useSnackbar();
@@ -49,18 +70,36 @@ const SingleWorkshop = (): JSX.Element => {
   return (
     <Grid container justifyContent="center" m={2}>
       {workshopDetails && (
-        <Card sx={{ width: '80%' }}>
-          <CardContent>
-            <Grid container>
-              <Grid item xs={6}>
-                <WorkshopDetails workshopDetails={workshopDetails} />
+        <Grid container item xs={11}>
+          <Accordion
+            expanded={expanded}
+            onChange={() => {
+              if (router?.query?.id) return;
+              setExpanded(!expanded);
+            }}
+          >
+            <AccordionSummary>
+              <Grid container item>
+                <Typography variant="h2" component="span">
+                  {workshopDetails.name} -
+                </Typography>
+                <Typography variant="h2" component="span" fontWeight="400" pl={1}>
+                  {workshopDetails.day_of_week}
+                </Typography>
               </Grid>
-              <Grid item xs={6}>
-                <BasicWorkshopForm workshopDetails={workshopDetails} />
+            </AccordionSummary>
+            <AccordionDetails>
+              <Grid container>
+                <Grid item xs={6}>
+                  <WorkshopDetails workshopDetails={workshopDetails} />
+                </Grid>
+                <Grid item xs={6}>
+                  <BasicWorkshopForm workshopDetails={workshopDetails} />
+                </Grid>
               </Grid>
-            </Grid>
-          </CardContent>
-        </Card>
+            </AccordionDetails>
+          </Accordion>
+        </Grid>
       )}
       {isError && <Typography>Niestety takich warsztatów nie ma w naszej ofercie</Typography>}
     </Grid>
