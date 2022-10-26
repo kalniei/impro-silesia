@@ -17,6 +17,10 @@ import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import { styled } from '@mui/material/styles';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 
+interface PageProps {
+  incomingWorkshops?: IBasicWorkshopObj;
+}
+
 const AccordionSummary = styled((props: AccordionSummaryProps) => (
   <MuiAccordionSummary
     expandIcon={<ArrowDropUpIcon color="primary" fontSize="large" />}
@@ -29,7 +33,7 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
   }
 }));
 
-const SingleWorkshop = (): JSX.Element => {
+const SingleWorkshop = ({ incomingWorkshops }: PageProps): JSX.Element => {
   const [workshopDetails, setWorkshopDetails] = useState<IBasicWorkshopObj | null>(null);
   const [isError, setIsError] = useState<boolean>(false);
   const [expanded, setExpanded] = useState<boolean>(true);
@@ -37,16 +41,19 @@ const SingleWorkshop = (): JSX.Element => {
   const router = useRouter();
   const snackbar = useSnackbar();
 
+  const setUpWorkshopDetails = (data: any) => {
+    if (!data) return;
+    setWorkshopDetails({
+      ...data,
+      workshop_dates: JSON.parse(data?.workshop_dates),
+      additional_info: JSON.parse(data?.additional_info)
+    });
+  };
+
   const getWorkshopDetails = async (id: string) => {
     try {
       const { data } = await request('post', '/getBasicWorkshopById', { path: id });
-      setWorkshopDetails(
-        data?.length && {
-          ...data[0],
-          workshop_dates: JSON.parse(data[0]?.workshop_dates),
-          additional_info: JSON.parse(data[0]?.additional_info)
-        }
-      );
+      setUpWorkshopDetails(data?.length ? data[0] : null);
     } catch (error: any) {
       snackbar.showMessage(
         getErrorMessage(error, 'W naszej bazie nie istneje takich warsztatów'),
@@ -61,8 +68,11 @@ const SingleWorkshop = (): JSX.Element => {
     if (!router.isReady) return;
     if (router?.query?.id) {
       getWorkshopDetails(router.query.id as string);
+    } else if (incomingWorkshops) {
+      setUpWorkshopDetails(incomingWorkshops);
+      setExpanded(false);
     } else {
-      snackbar.showMessage('Coś poszło nie tak z realizowaniem płatnośći', 'error');
+      snackbar.showMessage('W naszej bazie nie istneje takich warsztatów', 'error');
       setIsError(true);
     }
   }, [router.isReady]);
