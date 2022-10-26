@@ -37,6 +37,7 @@ declare module '@mui/material/Button' {
 declare module '@mui/material/Button' {
   interface ButtonPropsVariantOverrides {
     custom: true;
+    black: true;
   }
 }
 
@@ -65,10 +66,10 @@ const theme = createTheme({
     fontSize: 14,
     h1: {
       color: Colors.black,
-      fontWeight: 600,
-      fontSize: '24px',
-      lineHeight: '18px',
-      padding: '16px 0'
+      fontWeight: 800,
+      fontSize: '26px',
+      textTransform: 'uppercase',
+      paddingBottom: 0
     },
     h2: {
       color: Colors.black,
@@ -105,7 +106,7 @@ const theme = createTheme({
           props: { variant: 'custom' },
           style: {
             fontWeight: 900,
-            backgroundColor: Colors.lightOrange,
+            backgroundImage: `linear-gradient(${Colors.mainOrange}, ${Colors.lightOrange})`,
             color: Colors.white,
             fontSize: 20,
             textTransform: 'none',
@@ -116,6 +117,25 @@ const theme = createTheme({
             ':hover': {
               backgroundColor: Colors.lightOrange,
               filter: 'brightness(90%)',
+              boxShadow: '0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)'}
+          },
+        },
+        {
+          props: { variant: 'black' },
+          style: {
+            fontWeight: 900,
+            backgroundColor: Colors.black,
+            color: Colors.white,
+            fontSize: 18,
+            textTransform: 'uppercase',
+            borderRadius: 10,
+            padding: '12px 68px',
+            lineHeight: 1,
+            boxShadow: '0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)',
+            transition: 'all 1s',
+            ':hover': {
+              backgroundColor: Colors.black,
+              filter: 'brightness(80%)',
               boxShadow: '0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)'}
           },
         },

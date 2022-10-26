@@ -1,7 +1,5 @@
 import { Grid, Typography } from '@mui/material';
 import { IBasicWorkshopObj } from '../../ts/interfaces';
-import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import Colors from '../../helpers/Colors';
 import { makeStyles } from '@material-ui/core/styles';
 import Image from 'next/image';
