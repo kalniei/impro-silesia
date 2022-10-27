@@ -7,6 +7,10 @@ interface IBenefitsObj {
   text: string;
 }
 
+interface PageProps {
+  scrollToWorkshops: () => void;
+}
+
 const benefitsArr: IBenefitsObj[] = [
   {
     imgName: 'self-esteem',
@@ -34,12 +38,12 @@ const benefitsArr: IBenefitsObj[] = [
   }
 ];
 
-const BenefitsComponent = (): JSX.Element => {
+const BenefitsComponent = ({ scrollToWorkshops }: PageProps): JSX.Element => {
   return (
     <Grid item xs={12} py={6} px={2}>
       <Box className="maxWidth">
         <Typography variant="h1" textAlign="center">
-          Naucz się impro i zdabądź:
+          Naucz się impro i zdobądź:
         </Typography>
         <Grid container>
           {benefitsArr.map((x: IBenefitsObj, key: number) => (
@@ -93,7 +97,9 @@ const BenefitsComponent = (): JSX.Element => {
           </Typography>
         </Grid>
         <Grid container justifyContent="center" mt={4}>
-          <Button variant="black">Zapisz się</Button>
+          <Button variant="black" onClick={scrollToWorkshops}>
+            Zapisz się
+          </Button>
         </Grid>
       </Box>
     </Grid>

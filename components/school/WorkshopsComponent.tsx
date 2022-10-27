@@ -1,14 +1,19 @@
 import { Grid, Box, Typography } from '@mui/material';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import getErrorMessage from '../../helpers/getErrorMessage';
 import { request } from '../../helpers/restClient';
 import useSnackbar from '../../snackbar/useSnackbar';
 import { IBasicWorkshopObj } from '../../ts/interfaces';
 import SingleWorkshop from '../workshop/SingleWorkshop';
 
-const WorkshopsComponent = (): JSX.Element => {
+interface PageProps {
+  setMyRef: (ref: any) => void;
+}
+
+const WorkshopsComponent = ({ setMyRef }: PageProps): JSX.Element => {
   const [workshopsArr, setWorkshopsArr] = useState<IBasicWorkshopObj[]>([]);
   const snackbar = useSnackbar();
+  const myRef = useRef<HTMLImageElement>(null);
 
   const getWorkshopsArr = async () => {
     try {
@@ -27,8 +32,13 @@ const WorkshopsComponent = (): JSX.Element => {
     getWorkshopsArr();
   }, []);
 
+  useEffect(() => {
+    if (!myRef) return;
+    setMyRef(myRef);
+  }, [myRef]);
+
   return (
-    <Grid item xs={12} py={6} px={2}>
+    <Grid item xs={12} py={6} px={2} ref={myRef}>
       {workshopsArr.length > 0 && (
         <Box className="maxWidth">
           <Typography variant="h1" textAlign="center">
