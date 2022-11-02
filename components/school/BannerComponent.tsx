@@ -60,10 +60,9 @@ const BannerComponent = ({ scrollToWorkshops, scrollToBottom }: PageProps): JSX.
                 sx={{
                   textTransform: 'uppercase',
                   lineHeight: '1',
-                  fontSize: { xs: 14, sm: 16, lg: 18 },
-                  width: { xs: 180, sm: 200, lg: 240 },
-                  p: { xs: '8px', sm: '10px', lg: '12px' },
-                  mb: { xs: '8px', sm: 0 }
+                  fontSize: { xs: 18 },
+                  width: 240,
+                  p: '12px'
                 }}
               >
                 Zapisz się
@@ -74,9 +73,9 @@ const BannerComponent = ({ scrollToWorkshops, scrollToBottom }: PageProps): JSX.
                 variant="white"
                 onClick={scrollToBottom}
                 sx={{
-                  width: { xs: 180, sm: 200, lg: 240 },
-                  fontSize: { xs: 14, sm: 16, lg: 18 },
-                  p: { xs: '8px', sm: '10px', lg: '12px' },
+                  width: 240,
+                  fontSize: 18,
+                  p: '12px',
                   display: { xs: 'none', sm: 'inline-flex' }
                 }}
               >

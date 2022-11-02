@@ -281,7 +281,7 @@ const BasicWorkshopForm = ({ workshopDetails }: PageProps): JSX.Element => {
                   color="neutral"
                   focused
                   {...field}
-                  placeholder="Tutaj jest miejsce, jeśli chciałbyś/chciałabyś coś dodać"
+                  placeholder="Chcesz coś dodać?"
                   fullWidth
                   InputProps={{
                     startAdornment: (
