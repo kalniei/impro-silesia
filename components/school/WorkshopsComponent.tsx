@@ -38,7 +38,7 @@ const WorkshopsComponent = ({ setMyRef }: PageProps): JSX.Element => {
   }, [myRef]);
 
   return (
-    <Grid item xs={12} py={6} px={2} ref={myRef}>
+    <Grid item xs={12} py={6} sx={{ px: { xs: 0, sm: 2 } }} ref={myRef}>
       {workshopsArr.length > 0 && (
         <Box className="maxWidth">
           <Typography variant="h1" textAlign="center">

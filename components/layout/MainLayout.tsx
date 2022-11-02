@@ -3,11 +3,7 @@ import IPage from '../../ts/interfaces';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-  main: {
-    flexGrow: 1,
-    padding: '1em',
-    paddingLeft: 0
-  }
+  main: {}
 }));
 
 const MainLayout = ({ children }: IPage): JSX.Element => {

@@ -1,22 +1,32 @@
 import { Grid } from '@mui/material';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import BannerComponent from './BannerComponent';
 import BenefitsComponent from './BenefitsComponent';
 import DetailedInfoComponent from './DetailedInfoComponent';
 import WorkshopsComponent from './WorkshopsComponent';
 
 const SchoolMain = (): JSX.Element => {
-  const [myRef, setRef] = useState<any>(null);
+  const [workshopsRef, setWorkshopsRef] = useState<any>(null);
+  const bottomRef = useRef<HTMLImageElement>(null);
 
   const scrollToWorkshops = () => {
-    if (!myRef) return;
-    window.scrollTo({ behavior: 'smooth', top: myRef.current.offsetTop });
+    if (!workshopsRef) return;
+    window.scrollTo({ behavior: 'smooth', top: workshopsRef.current?.offsetTop });
+  };
+
+  const scrollToBottom = () => {
+    if (!bottomRef) return;
+    window.scrollTo({ behavior: 'smooth', top: bottomRef.current?.offsetTop });
   };
 
   return (
     <Grid container>
-      <BenefitsComponent scrollToWorkshops={scrollToWorkshops} />
+      <BannerComponent scrollToWorkshops={scrollToWorkshops} scrollToBottom={scrollToBottom} />
+      <Grid ref={bottomRef} container item>
+        <BenefitsComponent scrollToWorkshops={scrollToWorkshops} />
+      </Grid>
       <DetailedInfoComponent scrollToWorkshops={scrollToWorkshops} />
-      <WorkshopsComponent setMyRef={setRef} />
+      <WorkshopsComponent setMyRef={setWorkshopsRef} />
     </Grid>
   );
 };

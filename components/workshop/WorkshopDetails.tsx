@@ -19,7 +19,7 @@ const WorkshopDetails = ({ workshopDetails }: PageProps): JSX.Element => {
 
   return (
     <Grid container>
-      <Grid item xs={6}>
+      <Grid item xs={12} sm={6}>
         <Grid container alignItems="center">
           <Grid item>
             <Image src="/img/clock.png" width="50px" height="50px" alt="clock" />
@@ -45,7 +45,7 @@ const WorkshopDetails = ({ workshopDetails }: PageProps): JSX.Element => {
         </Grid>
       </Grid>
 
-      <Grid item xs={6} pl={1}>
+      <Grid item xs={12} sm={6} sx={{ pl: { xs: 0, sm: 1 }, mt: { xs: 4, sm: 0 } }}>
         <Grid container>
           <Grid item>
             <Image src="/img/calendar.png" width="50px" height="50px" alt="calendar" />
@@ -58,7 +58,7 @@ const WorkshopDetails = ({ workshopDetails }: PageProps): JSX.Element => {
                   key={i}
                   className={i === 0 ? classes.orangeText : ''}
                   mt={1}
-                  px={1}
+                  sx={{ px: { xs: 0, sm: 1 } }}
                 >
                   {item}
                 </Typography>
@@ -68,7 +68,7 @@ const WorkshopDetails = ({ workshopDetails }: PageProps): JSX.Element => {
         </Grid>
       </Grid>
 
-      <Grid item xs={10} mt={4}>
+      <Grid item xs={12} sm={10} my={4}>
         {workshopDetails.additional_info?.map((item, i) => (
           <Typography key={i} variant="subtitle2">
             - {item}

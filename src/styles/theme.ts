@@ -38,10 +38,12 @@ declare module '@mui/material/Button' {
   interface ButtonPropsVariantOverrides {
     custom: true;
     black: true;
+    white: true;
   }
 }
+let theme = createTheme()
 
-const theme = createTheme({
+theme = createTheme(theme ,{
   palette: {
     primary: {
       main: Colors.mainOrange
@@ -69,14 +71,23 @@ const theme = createTheme({
       fontWeight: 800,
       fontSize: '26px',
       textTransform: 'uppercase',
-      paddingBottom: 0
+      paddingBottom: 0,
+      [theme.breakpoints.down('md')]: {
+        fontSize: '24px',
+      },
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '22px',
+      },
     },
     h2: {
       color: Colors.black,
       fontSize: `22px`,
       fontWeight: 800,
       textTransform: 'uppercase',
-      paddingBottom: 0
+      paddingBottom: 0,
+      [theme.breakpoints.down('md')]: {
+        fontSize: '20px',
+      },
     },
     h3: {
       fontSize: '1.3em',
@@ -97,6 +108,12 @@ const theme = createTheme({
       color: Colors.black,
       fontWeight: 500,
       fontSize: '18px',
+      [theme.breakpoints.down('md')]: {
+        fontSize: '16px',
+      },
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '14px',
+      },
     },
     subtitle2: {
       color: Colors.grey,
@@ -122,8 +139,14 @@ const theme = createTheme({
             ':hover': {
               backgroundColor: Colors.lightOrange,
               filter: 'brightness(90%)',
-              boxShadow: '0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)'}
-          },
+              boxShadow: '0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)'},
+            [theme.breakpoints.down('md')]: {
+              fontSize: '16px',
+            },
+            [theme.breakpoints.down('sm')]: {
+              fontSize: '14px',
+            }, 
+            },
         },
         {
           props: { variant: 'black' },
@@ -140,6 +163,25 @@ const theme = createTheme({
             transition: 'all 1s',
             ':hover': {
               backgroundColor: Colors.black,
+              filter: 'brightness(80%)',
+              boxShadow: '0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)'}
+          },
+        },
+        {
+          props: { variant: 'white' },
+          style: {
+            fontWeight: 900,
+            backgroundColor: Colors.white,
+            color: Colors.black,
+            fontSize: 18,
+            textTransform: 'uppercase',
+            borderRadius: 10,
+            padding: '12px',
+            lineHeight: 1,
+            boxShadow: '0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)',
+            transition: 'all 1s',
+            ':hover': {
+              backgroundColor: Colors.white,
               filter: 'brightness(80%)',
               boxShadow: '0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)'}
           },
