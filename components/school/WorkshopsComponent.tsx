@@ -45,7 +45,7 @@ const WorkshopsComponent = ({ setMyRef }: PageProps): JSX.Element => {
             Warsztaty
           </Typography>
           {workshopsArr.map((item: IBasicWorkshopObj) => (
-            <SingleWorkshop incomingWorkshops={item} />
+            <SingleWorkshop key={item.path} incomingWorkshops={item} />
           ))}
         </Box>
       )}

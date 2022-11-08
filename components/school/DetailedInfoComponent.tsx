@@ -75,8 +75,8 @@ const DetailedInfoComponent = ({ scrollToWorkshops }: PageProps): JSX.Element =>
                     <Typography variant="h1">{x.title}</Typography>
                   </Grid>
                   <Grid item sx={{ pl: { xs: 1, sm: 2, md: 4 } }} xs={12}>
-                    {x.positions.map((item: string) => (
-                      <ListItem>
+                    {x.positions.map((item: string, index: number) => (
+                      <ListItem key={index}>
                         <Typography variant="body1" dangerouslySetInnerHTML={{ __html: item }} />
                       </ListItem>
                     ))}
