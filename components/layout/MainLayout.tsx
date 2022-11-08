@@ -1,17 +1,10 @@
 import { Box, Fab, useScrollTrigger, Fade, Button } from '@mui/material';
 import IPage from '../../ts/interfaces';
-import { makeStyles } from '@material-ui/core/styles';
 import Navigation from './Navigation';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Footer from './Footer';
 
-const useStyles = makeStyles((theme) => ({
-  main: {}
-}));
-
 const MainLayout = ({ children }: IPage): JSX.Element => {
-  const classes = useStyles();
-
   const ScrollTop = ({ children }: IPage) => {
     const trigger = useScrollTrigger({
       disableHysteresis: true,
@@ -46,7 +39,7 @@ const MainLayout = ({ children }: IPage): JSX.Element => {
   return (
     <div>
       <Navigation />
-      <Box component="main" className={classes.main}>
+      <Box component="main" sx={{ pt: 8, pb: 5 }}>
         {children}
       </Box>
 
