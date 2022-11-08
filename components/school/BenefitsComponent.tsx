@@ -61,20 +61,20 @@ const BenefitsComponent = ({ scrollToWorkshops }: PageProps): JSX.Element => {
                 <Image src={`/img/${x.imgName}.png`} width="100px" height="100px" alt={x.imgName} />
                 <Box
                   sx={{
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 19,
                     fontWeight: 800,
                     borderRadius: 3,
                     width: '230px',
                     height: '50px',
                     textAlign: 'center',
-                    backgroundImage: `linear-gradient(${Colors.mainOrange}, ${Colors.lightOrange})`,
                     textTransform: 'uppercase',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
                     marginTop: '-8px',
-                    lineHeight: '1'
+                    lineHeight: '1',
+                    borderBottom: `4px solid ${Colors.mainOrange}`
                   }}
                 >
                   <span dangerouslySetInnerHTML={{ __html: x.text }} />
@@ -84,20 +84,12 @@ const BenefitsComponent = ({ scrollToWorkshops }: PageProps): JSX.Element => {
           ))}
         </Grid>
         <Grid container justifyContent="center">
-          <Typography
-            variant="h1"
-            display="block"
-            textAlign="center"
-            mt={8}
-            sx={{
-              borderBottom: `4px solid ${Colors.mainOrange}`
-            }}
-          >
+          <Typography variant="h1" display="block" textAlign="center" mt={8}>
             W życiu, biznesie i na scenie!
           </Typography>
         </Grid>
         <Grid container justifyContent="center" mt={4}>
-          <Button variant="black" onClick={scrollToWorkshops}>
+          <Button variant="custom" onClick={scrollToWorkshops} sx={{ padding: '8px 68px' }}>
             Zapisz się
           </Button>
         </Grid>
