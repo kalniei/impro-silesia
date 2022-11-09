@@ -1,16 +1,22 @@
 import { Grid, Box, Typography, Button } from '@mui/material';
 import Colors from '../../helpers/Colors';
+import { IBannerObj } from '../../ts/interfaces';
 
 interface PageProps {
-  scrollToWorkshops: () => void;
-  scrollToBottom: () => void;
+  bannerObj: IBannerObj;
+  orangeButtonAction: () => void;
+  whiteButtonAction: () => void;
 }
 
-const BannerComponent = ({ scrollToWorkshops, scrollToBottom }: PageProps): JSX.Element => {
+const BannerComponent = ({
+  bannerObj,
+  orangeButtonAction,
+  whiteButtonAction
+}: PageProps): JSX.Element => {
   return (
     <Grid item xs={12} sx={{ backgroundColor: Colors.black, position: 'relative' }}>
       <img
-        src="/img/schoolMain.jpg"
+        src={`/img/${bannerObj.imgPath}`}
         alt=""
         style={{ maxWidth: '100%', display: 'block', margin: '0 auto' }}
       />
@@ -28,16 +34,16 @@ const BannerComponent = ({ scrollToWorkshops, scrollToBottom }: PageProps): JSX.
               color={Colors.mainOrange}
               sx={{ fontSize: { xs: 26, sm: 38, md: 50, lg: 60 } }}
             >
-              Szkoła Impro Silesia
+              {bannerObj.mainHeader}
             </Typography>
           </Grid>
           <Grid item xs={12}>
             <Typography
               variant="h1"
               color={Colors.white}
-              sx={{ fontSize: { xs: 21.5, sm: 31.5, md: 41, lg: 49 } }}
+              sx={{ fontSize: bannerObj.secondaryHeaderFont }}
             >
-              Warsztaty Improwizacji
+              {bannerObj.secondaryHeader}
             </Typography>
           </Grid>
           <Grid item xs={12} sx={{ mt: { xs: 2, sm: 3, md: 4, lg: 6 } }}>
@@ -48,7 +54,7 @@ const BannerComponent = ({ scrollToWorkshops, scrollToBottom }: PageProps): JSX.
               color={Colors.white}
               sx={{ fontSize: { xs: 16, sm: 20, md: 26, lg: 30 } }}
             >
-              Techniki teatru impro <br /> w życiu biznesie i na scenie!
+              <span dangerouslySetInnerHTML={{ __html: bannerObj.bodyText }} />
             </Typography>
           </Grid>
 
@@ -56,7 +62,7 @@ const BannerComponent = ({ scrollToWorkshops, scrollToBottom }: PageProps): JSX.
             <Grid item mr={6}>
               <Button
                 variant="custom"
-                onClick={scrollToWorkshops}
+                onClick={orangeButtonAction}
                 sx={{
                   textTransform: 'uppercase',
                   lineHeight: '1',
@@ -65,13 +71,13 @@ const BannerComponent = ({ scrollToWorkshops, scrollToBottom }: PageProps): JSX.
                   p: '12px'
                 }}
               >
-                Zapisz się
+                {bannerObj.orangeButtonName}
               </Button>
             </Grid>
             <Grid item>
               <Button
                 variant="white"
-                onClick={scrollToBottom}
+                onClick={whiteButtonAction}
                 sx={{
                   width: 240,
                   fontSize: 18,
@@ -79,7 +85,7 @@ const BannerComponent = ({ scrollToWorkshops, scrollToBottom }: PageProps): JSX.
                   display: { xs: 'none', sm: 'inline-flex' }
                 }}
               >
-                Dowiedz się więcej
+                {bannerObj.whiteButtonName}
               </Button>
             </Grid>
           </Grid>

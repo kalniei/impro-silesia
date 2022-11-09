@@ -44,7 +44,7 @@ const navItems: IMenuObj[] = [
   },
   {
     name: 'Szkoła',
-    path: '/szkola',
+    path: '/warsztaty',
     elements: [
       // {
       //   name: 'Zapisy',

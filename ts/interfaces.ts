@@ -4,6 +4,21 @@ export default interface IPage {
   children: JSX.Element | JSX.Element[];
 }
 
+export interface IInfoObj {
+  imgName: string;
+  text: string;
+}
+
+export interface IBannerObj {
+  mainHeader: string,
+  secondaryHeader: string,
+  secondaryHeaderFont: object,
+  bodyText: string,
+  imgPath: string,
+  orangeButtonName: string,
+  whiteButtonName: string,
+}
+
 export interface IUserObj {
   date: string | Date;
   level: TLevelTypes;
