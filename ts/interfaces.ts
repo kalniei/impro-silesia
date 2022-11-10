@@ -9,6 +9,13 @@ export interface IInfoObj {
   text: string;
 }
 
+export interface IActionObj {
+  imgName: string;
+  text: string;
+  actionText: string;
+  actionPath: string;
+}
+
 export interface IBannerObj {
   mainHeader: string,
   secondaryHeader: string,
