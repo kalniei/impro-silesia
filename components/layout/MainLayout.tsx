@@ -39,7 +39,7 @@ const MainLayout = ({ children }: IPage): JSX.Element => {
   return (
     <div>
       <Navigation />
-      <Box component="main" sx={{ pt: 8, pb: 5 }}>
+      <Box component="main" sx={{ pt: { xs: 7, sm: 8 }, pb: 5 }}>
         {children}
       </Box>
 

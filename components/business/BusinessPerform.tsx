@@ -1,12 +1,12 @@
 import { Grid } from '@mui/material';
 import { useRef, useState } from 'react';
 import { IBannerObj } from '../../ts/interfaces';
-import BannerComponent from './BannerComponent';
+import BannerComponent from '../common/BannerComponent';
 
 const bannerObj: IBannerObj = {
   mainHeader: 'Teatr Improwizacji',
   secondaryHeader: 'Dla twojej organizacji',
-  secondaryHeaderFont: { xs: 21.5, sm: 31.5, md: 41, lg: 49 },
+  secondaryHeaderFont: { xs: 20, sm: 31.5, md: 41, lg: 49 },
   bodyText: 'Warsztaty, spektakle i integracje <br /> na twoim evencie, w firmie i zespole!',
   imgPath: 'teatrDlaFirm.jpg',
   orangeButtonName: 'Skontaktuj się',

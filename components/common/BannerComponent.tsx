@@ -32,7 +32,7 @@ const BannerComponent = ({
             <Typography
               variant="h1"
               color={Colors.mainOrange}
-              sx={{ fontSize: { xs: 26, sm: 38, md: 50, lg: 60 } }}
+              sx={{ fontSize: { xs: 24, sm: 38, md: 50, lg: 60 } }}
             >
               {bannerObj.mainHeader}
             </Typography>
@@ -52,7 +52,7 @@ const BannerComponent = ({
               textTransform="none"
               fontWeight="500"
               color={Colors.white}
-              sx={{ fontSize: { xs: 16, sm: 20, md: 26, lg: 30 } }}
+              sx={{ fontSize: { xs: 14, sm: 20, md: 26, lg: 30 } }}
             >
               <span dangerouslySetInnerHTML={{ __html: bannerObj.bodyText }} />
             </Typography>
@@ -66,9 +66,9 @@ const BannerComponent = ({
                 sx={{
                   textTransform: 'uppercase',
                   lineHeight: '1',
-                  fontSize: { xs: 18 },
+                  fontSize: { xs: 15, sm: 18 },
                   width: 240,
-                  p: '12px'
+                  p: { xs: '7px', sm: '12px' }
                 }}
               >
                 {bannerObj.orangeButtonName}
