@@ -9,6 +9,13 @@ export interface IInfoObj {
   text: string;
 }
 
+export interface IOpinionsObj {
+  imgName: string;
+  name: string;
+  title: string;
+  content: string;
+}
+
 export interface IActionObj {
   imgName: string;
   text: string;

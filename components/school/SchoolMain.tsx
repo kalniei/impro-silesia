@@ -2,6 +2,7 @@ import { Grid } from '@mui/material';
 import { useRef, useState } from 'react';
 import { IBannerObj } from '../../ts/interfaces';
 import BannerComponent from '../common/BannerComponent';
+import TextOpinionsComponent from '../common/TextOpinionsComponent';
 import BenefitsComponent from './BenefitsComponent';
 import DetailedInfoComponent from './DetailedInfoComponent';
 import WorkshopsComponent from './WorkshopsComponent';
@@ -41,6 +42,7 @@ const SchoolMain = (): JSX.Element => {
         <BenefitsComponent scrollToWorkshops={scrollToWorkshops} />
       </Grid>
       <DetailedInfoComponent scrollToWorkshops={scrollToWorkshops} />
+      <TextOpinionsComponent />
       <WorkshopsComponent setMyRef={setWorkshopsRef} />
     </Grid>
   );
