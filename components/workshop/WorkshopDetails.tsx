@@ -22,7 +22,7 @@ const WorkshopDetails = ({ workshopDetails }: PageProps): JSX.Element => {
       <Grid item xs={12} sm={6}>
         <Grid container alignItems="center">
           <Grid item>
-            <Image src="/img/clock.png" width="50px" height="50px" alt="clock" />
+            <Image src="/img/icons/clock.png" width="50px" height="50px" alt="clock" />
           </Grid>
           <Grid item ml={1}>
             <Typography variant="h5" className={classes.orangeText}>
@@ -34,7 +34,7 @@ const WorkshopDetails = ({ workshopDetails }: PageProps): JSX.Element => {
 
         <Grid container alignItems="center" mt={4}>
           <Grid item>
-            <Image src="/img/wallet.png" width="50px" height="50px" alt="wallet" />
+            <Image src="/img/icons/wallet.png" width="50px" height="50px" alt="wallet" />
           </Grid>
           <Grid item ml={1}>
             <Typography variant="h5" className={classes.orangeText}>
@@ -48,7 +48,7 @@ const WorkshopDetails = ({ workshopDetails }: PageProps): JSX.Element => {
       <Grid item xs={12} sm={6} sx={{ pl: { xs: 0, sm: 1 }, mt: { xs: 4, sm: 0 } }}>
         <Grid container>
           <Grid item>
-            <Image src="/img/calendar.png" width="50px" height="50px" alt="calendar" />
+            <Image src="/img/icons/calendar.png" width="50px" height="50px" alt="calendar" />
           </Grid>
           <Grid item ml={1} pt={0}>
             <>

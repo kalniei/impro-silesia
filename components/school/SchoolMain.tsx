@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { IBannerObj } from '../../ts/interfaces';
 import BannerComponent from '../common/BannerComponent';
 import TextOpinionsComponent from '../common/TextOpinionsComponent';
-import BenefitsComponent from './BenefitsComponent';
+import SchoolBenefitsComponent from './SchoolBenefitsComponent';
 import DetailedInfoComponent from './DetailedInfoComponent';
 import WorkshopsComponent from './WorkshopsComponent';
 
@@ -39,7 +39,7 @@ const SchoolMain = (): JSX.Element => {
         whiteButtonAction={scrollToBottom}
       />
       <Grid ref={bottomRef} container item>
-        <BenefitsComponent scrollToWorkshops={scrollToWorkshops} />
+        <SchoolBenefitsComponent scrollToWorkshops={scrollToWorkshops} />
       </Grid>
       <DetailedInfoComponent scrollToWorkshops={scrollToWorkshops} />
       <TextOpinionsComponent />

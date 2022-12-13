@@ -45,7 +45,7 @@ const ActionElements = ({ infoArray }: PageProps): JSX.Element => {
                 <Grid container>
                   <Grid item xs={12}>
                     <Image
-                      src={`/img/${x.imgName}.png`}
+                      src={`/img/icons/${x.imgName}.png`}
                       width="100px"
                       height="100px"
                       alt={x.imgName}

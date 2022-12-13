@@ -106,11 +106,11 @@ theme = createTheme(theme ,{
       fontWeight: 700
     },
     h4: {
-      color: Colors.darkGrey,
-      fontSize: `17px`,
+      color: Colors.black,
+      fontSize: `20px`,
       fontWeight: 700,
       textTransform: 'uppercase',
-      paddingBottom: '16px'
+      paddingBottom: 0
     },
     h5: {
       fontWeight: 700,

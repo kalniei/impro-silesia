@@ -16,7 +16,7 @@ const BannerComponent = ({
   return (
     <Grid item xs={12} sx={{ backgroundColor: Colors.black, position: 'relative' }}>
       <img
-        src={`/img/${bannerObj.imgPath}`}
+        src={`/img/banners/${bannerObj.imgPath}`}
         alt=""
         style={{ maxWidth: '100%', display: 'block', margin: '0 auto' }}
       />

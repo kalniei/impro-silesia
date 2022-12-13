@@ -2,6 +2,10 @@ import { Grid } from '@mui/material';
 import { useRef, useState } from 'react';
 import { IBannerObj } from '../../ts/interfaces';
 import BannerComponent from '../common/BannerComponent';
+import IntegrationBenefitsComponent from './integration/IntegrationBenefitsComponent';
+import IntegrationInformationComponentOne from './integration/IntegrationInformationComponentOne';
+import IntegrationInformationComponentTwo from './integration/IntegrationInformationComponentTwo';
+import IntegrationMethodComponent from './integration/IntegrationMethodComponent';
 
 const bannerObj: IBannerObj = {
   mainHeader: '2 tony integracji',
@@ -12,6 +16,7 @@ const bannerObj: IBannerObj = {
   orangeButtonName: 'Skontaktuj się',
   whiteButtonName: 'Dowiedz się więcej'
 };
+
 const BusinessIntegrations = (): JSX.Element => {
   const [workshopsRef, setWorkshopsRef] = useState<any>(null);
   const bottomRef = useRef<HTMLImageElement>(null);
@@ -32,7 +37,27 @@ const BusinessIntegrations = (): JSX.Element => {
         bannerObj={bannerObj}
         orangeButtonAction={scrollToWorkshops}
         whiteButtonAction={scrollToBottom}
-      />{' '}
+      />
+      <IntegrationInformationComponentOne
+        scrollTo={() => {
+          return;
+        }}
+      />
+      <IntegrationBenefitsComponent
+        scrollTo={() => {
+          return;
+        }}
+      />
+      <IntegrationMethodComponent
+        scrollTo={() => {
+          return;
+        }}
+      />
+      <IntegrationInformationComponentTwo
+        scrollTo={() => {
+          return;
+        }}
+      />
     </Grid>
   );
 };

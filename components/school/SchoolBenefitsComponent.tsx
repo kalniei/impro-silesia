@@ -33,7 +33,7 @@ const benefitsArr: IInfoObj[] = [
   }
 ];
 
-const BenefitsComponent = ({ scrollToWorkshops }: PageProps): JSX.Element => {
+const SchoolBenefitsComponent = ({ scrollToWorkshops }: PageProps): JSX.Element => {
   return (
     <Grid item xs={12} py={6} px={2}>
       <Box className="maxWidth">
@@ -56,4 +56,4 @@ const BenefitsComponent = ({ scrollToWorkshops }: PageProps): JSX.Element => {
   );
 };
 
-export default BenefitsComponent;
+export default SchoolBenefitsComponent;

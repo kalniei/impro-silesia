@@ -22,7 +22,12 @@ const InfoElements = ({ infoArray }: PageProps): JSX.Element => {
           sx={{ mt: { xs: 4, sm: 6, md: 8 } }}
         >
           <Grid item textAlign="center">
-            <Image src={`/img/${x.imgName}.png`} width="100px" height="100px" alt={x.imgName} />
+            <Image
+              src={`/img/icons/${x.imgName}.png`}
+              width="100px"
+              height="100px"
+              alt={x.imgName}
+            />
             <Box
               sx={{
                 color: Colors.black,
