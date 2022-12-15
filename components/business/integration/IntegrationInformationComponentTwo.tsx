@@ -72,10 +72,22 @@ const IntegrationInformationComponentTwo = ({ scrollTo }: PageProps): JSX.Elemen
             </Grid>
 
             <Grid item xs={12} textAlign="center">
+              <iframe
+                width="329"
+                height="584"
+                src="https://www.youtube.com/embed/k3NBIu-ggy4"
+                title="warsztaty impro - integracja - opinia Dieboldnixdorf.com(2)"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </Grid>
+
+            <Grid item xs={12} textAlign="center">
               <Button
                 variant="custom"
                 onClick={scrollTo}
-                sx={{ padding: '6px 24px', textTransform: 'uppercase' }}
+                sx={{ padding: '6px 24px', textTransform: 'uppercase', mt: 4 }}
               >
                 Zapytaj o ofertę
               </Button>
@@ -93,33 +105,41 @@ const IntegrationInformationComponentTwo = ({ scrollTo }: PageProps): JSX.Elemen
           backgroundImage: `linear-gradient(${Colors.mainOrange}, ${Colors.lightOrange})`
         }}
       >
-        <Grid item xs={6}>
+        <Grid item xs={10} sm={6}>
           <Typography variant="body1" fontWeight={500}>
             Te konkretne warsztaty są skupione na integracjii, zabawie i pozytywnej energii -
             potrzebujesz większego przełożenia na biznes?
           </Typography>
         </Grid>
-        <Grid item xs={12} textAlign="center" mt={3}>
-          <Button
-            variant="custom"
-            onClick={scrollTo}
-            sx={{
-              padding: '6px 24px',
-              textTransform: 'uppercase',
-              fontSize: '16px',
-              marginRight: 4
-            }}
+        <Grid container item xs={12} textAlign="center" mt={3}>
+          <Grid item xs={12} sm={6} sx={{ textAlign: { xs: 'center', sm: 'right' } }}>
+            <Button
+              variant="custom"
+              onClick={scrollTo}
+              sx={{
+                padding: '6px 24px',
+                textTransform: 'uppercase',
+                fontSize: '16px',
+                marginRight: { xs: 0, sm: 4 }
+              }}
+            >
+              Skontaktuj się z nami
+            </Button>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            sx={{ textAlign: { xs: 'center', sm: 'left' }, marginTop: { xs: 4, sm: 0 } }}
           >
-            Skontaktuj się z nami
-          </Button>
-
-          <Button
-            variant="white"
-            onClick={scrollTo}
-            sx={{ padding: '12px 24px', textTransform: 'uppercase', fontSize: '16px' }}
-          >
-            Sprawdź inne szkolenia
-          </Button>
+            <Button
+              variant="white"
+              onClick={scrollTo}
+              sx={{ padding: '12px 24px', textTransform: 'uppercase', fontSize: '16px' }}
+            >
+              Sprawdź inne szkolenia
+            </Button>
+          </Grid>
         </Grid>
       </Grid>
     </>

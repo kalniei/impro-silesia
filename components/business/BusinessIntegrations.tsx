@@ -2,10 +2,13 @@ import { Grid } from '@mui/material';
 import { useRef, useState } from 'react';
 import { IBannerObj } from '../../ts/interfaces';
 import BannerComponent from '../common/BannerComponent';
+import ContactMain from '../contact/ContactMain';
 import IntegrationBenefitsComponent from './integration/IntegrationBenefitsComponent';
 import IntegrationInformationComponentOne from './integration/IntegrationInformationComponentOne';
 import IntegrationInformationComponentTwo from './integration/IntegrationInformationComponentTwo';
 import IntegrationMethodComponent from './integration/IntegrationMethodComponent';
+import IntegrationPerformanceComponent from './integration/IntegrationPerformanceComponent';
+import IntegrationTechDetailsComponent from './integration/IntegrationTechDetailsComponent';
 
 const bannerObj: IBannerObj = {
   mainHeader: '2 tony integracji',
@@ -58,6 +61,17 @@ const BusinessIntegrations = (): JSX.Element => {
           return;
         }}
       />
+      <IntegrationTechDetailsComponent
+        scrollTo={() => {
+          return;
+        }}
+      />
+      <IntegrationPerformanceComponent
+        scrollTo={() => {
+          return;
+        }}
+      />
+      <ContactMain />
     </Grid>
   );
 };

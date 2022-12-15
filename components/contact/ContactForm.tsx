@@ -15,6 +15,7 @@ import { request } from '../../helpers/restClient';
 import getErrorMessage from '../../helpers/getErrorMessage';
 import { Email as EmailIcon, Phone as PhoneIcon } from '@mui/icons-material/';
 import { makeStyles } from '@material-ui/core/styles';
+import Colors from '../../helpers/Colors';
 
 interface IContactObj {
   date: string | Date;
@@ -34,7 +35,6 @@ const useStyles = makeStyles((theme) => ({}));
 
 const ContactForm = (): JSX.Element => {
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
-  const [rodoCheck, setRodoCheck] = useState<boolean>(false);
   const [regulationCheck, setRegulationCheck] = useState<boolean>(false);
 
   const snackbar = useSnackbar();
@@ -85,7 +85,7 @@ const ContactForm = (): JSX.Element => {
   };
 
   const onSubmit = (data: any) => {
-    if (!rodoCheck || !regulationCheck) {
+    if (!regulationCheck) {
       snackbar.showMessage('Zaznacz wszystkie zgody!', 'error');
       return;
     }
@@ -131,7 +131,7 @@ const ContactForm = (): JSX.Element => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <EmailIcon />
+                        <EmailIcon sx={{ color: Colors.mainOrange }} />
                       </InputAdornment>
                     )
                   }}
@@ -159,7 +159,7 @@ const ContactForm = (): JSX.Element => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <PhoneIcon />
+                        <PhoneIcon sx={{ color: Colors.mainOrange }} />
                       </InputAdornment>
                     )
                   }}
@@ -195,23 +195,6 @@ const ContactForm = (): JSX.Element => {
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={rodoCheck}
-                  onChange={() => {
-                    setRodoCheck(!rodoCheck);
-                  }}
-                />
-              }
-              label={
-                <Typography variant="subtitle2" fontSize={10}>
-                  Wyrażam zgodę na przetwarzanie danych osobowych dla potrzeb niezbędnych do
-                  przesyłania informacji związanych z warsztatami Impro Silesia*
-                </Typography>
-              }
-            />
-
-            <FormControlLabel
-              control={
-                <Checkbox
                   checked={regulationCheck}
                   onChange={() => {
                     setRegulationCheck(!regulationCheck);
@@ -241,7 +224,7 @@ const ContactForm = (): JSX.Element => {
           variant="custom"
           onClick={handleSubmit(onSubmit)}
           disabled={isProcessing}
-          sx={{ width: '100%' }}
+          sx={{ width: '100%', textTransform: 'uppercase' }}
         >
           {isProcessing ? <CircularProgress /> : 'Wyślij zapytanie'}
         </Button>
