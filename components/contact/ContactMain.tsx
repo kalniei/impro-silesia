@@ -1,11 +1,22 @@
-import { Grid, Card, CardContent, Typography, Box } from '@mui/material';
-import { textAlign } from '@mui/system';
+import { Grid, Card, Typography, Box } from '@mui/material';
 import Colors from '../../helpers/Colors';
 import ContactForm from './ContactForm';
+import { useRef, useEffect } from 'react';
 
-const ContactMain = (): JSX.Element => {
+interface PageProps {
+  setMyRef: (ref: any) => void;
+}
+
+const ContactMain = ({ setMyRef }: PageProps): JSX.Element => {
+  const myRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    if (!myRef) return;
+    setMyRef(myRef);
+  }, [myRef]);
+
   return (
-    <Grid container justifyContent="center" mt={6}>
+    <Grid container justifyContent="center" mt={6} ref={myRef}>
       <Grid item xs={12} className="maxWidth">
         <Card>
           <Grid container>

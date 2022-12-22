@@ -77,9 +77,9 @@ const IntegrationInformationComponentTwo = ({ scrollTo }: PageProps): JSX.Elemen
                 height="584"
                 src="https://www.youtube.com/embed/k3NBIu-ggy4"
                 title="warsztaty impro - integracja - opinia Dieboldnixdorf.com(2)"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
               ></iframe>
             </Grid>
 

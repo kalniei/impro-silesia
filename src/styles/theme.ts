@@ -134,6 +134,14 @@ theme = createTheme(theme ,{
     }
   },
   components: {
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: '16px',
+          boxShadow: '0px 4px 9px -3px rgba(66, 68, 90, 1)'
+        },
+      },
+    },
     MuiButton: {
       variants: [
         {

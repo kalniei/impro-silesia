@@ -32,12 +32,7 @@ const IntegrationInformationComponentOne = ({ scrollTo }: PageProps): JSX.Elemen
       }}
     >
       <Box className="maxWidth">
-        <LongInfoComponent
-          infoObj={longInformationObj}
-          scrollTo={() => {
-            return;
-          }}
-        />
+        <LongInfoComponent infoObj={longInformationObj} scrollTo={scrollTo} />
 
         <Grid container mt={4}>
           <Grid item xs={12}>

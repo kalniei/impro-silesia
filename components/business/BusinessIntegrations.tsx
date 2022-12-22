@@ -2,8 +2,10 @@ import { Grid } from '@mui/material';
 import { useRef, useState } from 'react';
 import { IBannerObj } from '../../ts/interfaces';
 import BannerComponent from '../common/BannerComponent';
+import VideoOpinions from '../common/VideoOpinions';
 import ContactMain from '../contact/ContactMain';
 import IntegrationBenefitsComponent from './integration/IntegrationBenefitsComponent';
+import IntegrationBenefitsTwoComponent from './integration/IntegrationBenefitsTwoComponent copy';
 import IntegrationInformationComponentOne from './integration/IntegrationInformationComponentOne';
 import IntegrationInformationComponentTwo from './integration/IntegrationInformationComponentTwo';
 import IntegrationMethodComponent from './integration/IntegrationMethodComponent';
@@ -21,12 +23,12 @@ const bannerObj: IBannerObj = {
 };
 
 const BusinessIntegrations = (): JSX.Element => {
-  const [workshopsRef, setWorkshopsRef] = useState<any>(null);
+  const [contactRef, setContactRef] = useState<any>(null);
   const bottomRef = useRef<HTMLImageElement>(null);
 
-  const scrollToWorkshops = () => {
-    if (!workshopsRef) return;
-    window.scrollTo({ behavior: 'smooth', top: workshopsRef.current?.offsetTop });
+  const scrollToContact = () => {
+    if (!contactRef) return;
+    window.scrollTo({ behavior: 'smooth', top: contactRef.current?.offsetTop });
   };
 
   const scrollToBottom = () => {
@@ -38,40 +40,18 @@ const BusinessIntegrations = (): JSX.Element => {
     <Grid container>
       <BannerComponent
         bannerObj={bannerObj}
-        orangeButtonAction={scrollToWorkshops}
+        orangeButtonAction={scrollToContact}
         whiteButtonAction={scrollToBottom}
       />
-      <IntegrationInformationComponentOne
-        scrollTo={() => {
-          return;
-        }}
-      />
-      <IntegrationBenefitsComponent
-        scrollTo={() => {
-          return;
-        }}
-      />
-      <IntegrationMethodComponent
-        scrollTo={() => {
-          return;
-        }}
-      />
-      <IntegrationInformationComponentTwo
-        scrollTo={() => {
-          return;
-        }}
-      />
-      <IntegrationTechDetailsComponent
-        scrollTo={() => {
-          return;
-        }}
-      />
-      <IntegrationPerformanceComponent
-        scrollTo={() => {
-          return;
-        }}
-      />
-      <ContactMain />
+      <IntegrationInformationComponentOne scrollTo={scrollToContact} />
+      <IntegrationBenefitsComponent scrollTo={scrollToContact} />
+      <IntegrationMethodComponent scrollTo={scrollToContact} />
+      <IntegrationInformationComponentTwo scrollTo={scrollToContact} />
+      <IntegrationTechDetailsComponent scrollTo={scrollToContact} />
+      <IntegrationBenefitsTwoComponent scrollTo={scrollToContact} />
+      <VideoOpinions />
+      <IntegrationPerformanceComponent scrollTo={scrollToContact} />
+      <ContactMain setMyRef={setContactRef} />
     </Grid>
   );
 };
