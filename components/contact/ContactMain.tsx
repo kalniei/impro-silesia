@@ -11,7 +11,7 @@ const ContactMain = ({ setMyRef }: PageProps): JSX.Element => {
   const myRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    if (!myRef) return;
+    if (!myRef || !setMyRef) return;
     setMyRef(myRef);
   }, [myRef]);
 
