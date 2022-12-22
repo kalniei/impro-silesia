@@ -43,7 +43,9 @@ const BusinessIntegrations = (): JSX.Element => {
         orangeButtonAction={scrollToContact}
         whiteButtonAction={scrollToBottom}
       />
-      <IntegrationInformationComponentOne scrollTo={scrollToContact} />
+      <Grid ref={bottomRef} container item>
+        <IntegrationInformationComponentOne scrollTo={scrollToContact} />
+      </Grid>
       <IntegrationBenefitsComponent scrollTo={scrollToContact} />
       <IntegrationMethodComponent scrollTo={scrollToContact} />
       <IntegrationInformationComponentTwo scrollTo={scrollToContact} />

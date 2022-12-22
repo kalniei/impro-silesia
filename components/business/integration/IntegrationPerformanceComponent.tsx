@@ -23,7 +23,7 @@ const IntegrationPerformanceComponent = ({ scrollTo }: PageProps): JSX.Element =
           <Grid
             container
             justifyContent="flex-end"
-            sx={{ maxWidth: '650px', m: '0 0 0 auto;', px: 8, py: { sm: 4, md: 0 } }}
+            sx={{ maxWidth: '650px', m: '0 0 0 auto;', px: 8, py: { xs: 4, md: 0 } }}
           >
             <Grid item xs={12}>
               <Typography

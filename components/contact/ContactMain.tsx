@@ -17,7 +17,7 @@ const ContactMain = ({ setMyRef }: PageProps): JSX.Element => {
 
   return (
     <Grid container justifyContent="center" mt={6} ref={myRef}>
-      <Grid item xs={12} className="maxWidth">
+      <Grid item xs={12} className="maxWidth" sx={{ px: 2 }}>
         <Card>
           <Grid container>
             <Grid

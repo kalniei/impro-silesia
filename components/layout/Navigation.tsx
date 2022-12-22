@@ -44,7 +44,7 @@ const navItems: IMenuObj[] = [
   },
   {
     name: 'Szkoła',
-    path: '/warsztaty',
+    path: 'https://improsilesia.pl/warsztaty',
     elements: [
       // {
       //   name: 'Zapisy',

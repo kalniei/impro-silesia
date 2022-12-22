@@ -22,6 +22,10 @@ const useStyles = makeStyles({
 const IntegrationMethodComponent = ({ scrollTo }: PageProps): JSX.Element => {
   const classes = useStyles();
 
+  const goToLink = (url: string) => {
+    window.open(url, '_blank', 'noreferrer');
+  };
+
   return (
     <Grid item xs={12} py={6} px={2}>
       <Box className="maxWidth">
@@ -35,7 +39,16 @@ const IntegrationMethodComponent = ({ scrollTo }: PageProps): JSX.Element => {
         <Card>
           <CardContent sx={{ p: { xs: 2, sm: 2, md: 4 } }}>
             <Grid container justifyContent="center" alignItems="center">
-              <Grid item xs={12} md={6}>
+              <Grid
+                item
+                xs={12}
+                md={6}
+                onClick={() => {
+                  goToLink(
+                    'https://www.forbes.com/sites/forbesleadershipforum/2014/06/27/why-improv-training-is-great-business-training/?sh=26f90d3a6bcb'
+                  );
+                }}
+              >
                 <img className={classes.clickableImage} src={`/img/info/forbes.jpg`} alt="" />
                 <Typography
                   color={Colors.mainOrange}
@@ -47,7 +60,15 @@ const IntegrationMethodComponent = ({ scrollTo }: PageProps): JSX.Element => {
                   czytaj...
                 </Typography>
               </Grid>
-              <Grid item xs={12} md={6} textAlign="center">
+              <Grid
+                item
+                xs={12}
+                md={6}
+                textAlign="center"
+                onClick={() => {
+                  goToLink('https://grow.stanford.edu/browse/leading-with-an-improv-mindset/');
+                }}
+              >
                 <img src={`/img/info/stanford.jpg`} alt="" className={classes.clickableImage} />
                 <Typography
                   color={Colors.mainOrange}
@@ -59,7 +80,16 @@ const IntegrationMethodComponent = ({ scrollTo }: PageProps): JSX.Element => {
                   czytaj...
                 </Typography>
               </Grid>
-              <Grid item xs={12} mt={4}>
+              <Grid
+                item
+                xs={12}
+                mt={4}
+                onClick={() => {
+                  goToLink(
+                    'https://edition.cnn.com/2018/09/30/success/business-improv-class/index.html'
+                  );
+                }}
+              >
                 <img src={`/img/info/cnnbusiness.jpg`} alt="" className={classes.clickableImage} />
                 <Typography
                   color={Colors.mainOrange}

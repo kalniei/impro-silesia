@@ -5,7 +5,14 @@ const VideoOpinions = (): JSX.Element => {
     <Grid item xs={12} py={6} px={2}>
       <Box className="maxWidth">
         <Grid container>
-          <Grid item xs={12} md={6} lg={6} px={3} sx={{ mb: { xs: 4, mb: 6, lg: 0 } }}>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            lg={6}
+            px={3}
+            sx={{ mb: { xs: 4, mb: 6, lg: 6 }, textAlign: 'center' }}
+          >
             <iframe
               width="560"
               height="315"
@@ -17,7 +24,14 @@ const VideoOpinions = (): JSX.Element => {
             ></iframe>
           </Grid>
 
-          <Grid item xs={12} md={6} lg={6} px={3} sx={{ mb: { xs: 4, mb: 6, lg: 0 } }}>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            lg={6}
+            px={3}
+            sx={{ mb: { xs: 4, mb: 6, lg: 0 }, textAlign: 'center' }}
+          >
             <iframe
               width="560"
               height="315"
