@@ -4,7 +4,7 @@ import ContactForm from './ContactForm';
 import { useRef, useEffect } from 'react';
 
 interface PageProps {
-  setMyRef: (ref: any) => void;
+  setMyRef?: (ref: any) => void;
 }
 
 const ContactMain = ({ setMyRef }: PageProps): JSX.Element => {
