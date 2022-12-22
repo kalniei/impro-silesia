@@ -93,6 +93,19 @@ theme = createTheme(theme ,{
     },
     h2: {
       color: Colors.black,
+      fontWeight: 800,
+      fontSize: '26px',
+      textTransform: 'uppercase',
+      paddingBottom: 0,
+      [theme.breakpoints.down('md')]: {
+        fontSize: '24px',
+      },
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '22px',
+      },
+    },
+    h3: {
+      color: Colors.black,
       fontSize: `22px`,
       fontWeight: 800,
       textTransform: 'uppercase',
@@ -100,10 +113,6 @@ theme = createTheme(theme ,{
       [theme.breakpoints.down('md')]: {
         fontSize: '20px',
       },
-    },
-    h3: {
-      fontSize: '1.3em',
-      fontWeight: 700
     },
     h4: {
       color: Colors.black,

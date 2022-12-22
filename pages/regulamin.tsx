@@ -4,7 +4,7 @@ const RegulationPage = (): JSX.Element => {
   return (
     <Grid container py={4} px={8}>
       <Grid item xs={12}>
-        <Typography variant="h2">Regulamin Szkoły Impro Silesia</Typography>
+        <Typography variant="h3">Regulamin Szkoły Impro Silesia</Typography>
       </Grid>
 
       <Grid item xs={12} mt={2}>

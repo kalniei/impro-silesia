@@ -33,7 +33,7 @@ const ContactMain = ({ setMyRef }: PageProps): JSX.Element => {
             >
               <img
                 src={`/img/contact/szymon.jpg`}
-                alt=""
+                alt="Szymon Paszek"
                 style={{ maxWidth: '100%', maxHeight: '511px' }}
               />
               <Box
@@ -57,7 +57,7 @@ const ContactMain = ({ setMyRef }: PageProps): JSX.Element => {
             </Grid>
 
             <Grid item xs={12} md={7} p={8}>
-              <Typography variant="h1" textAlign="center" mb={1}>
+              <Typography variant="h2" textAlign="center" mb={1}>
                 <Box component="span" color={Colors.lightOrange}>
                   Skontaktuj się{' '}
                 </Box>

@@ -38,7 +38,7 @@ const IntegrationInformationComponentOne = ({ scrollTo }: PageProps): JSX.Elemen
           <Grid item xs={12}>
             <img
               src={`/img/info/opinion1.jpg`}
-              alt=""
+              alt="impro opinia"
               style={{ maxWidth: '100%', display: 'block', margin: '0 auto' }}
             />
           </Grid>

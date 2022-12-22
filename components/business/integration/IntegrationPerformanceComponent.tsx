@@ -71,7 +71,11 @@ const IntegrationPerformanceComponent = ({ scrollTo }: PageProps): JSX.Element =
             textAlign: { xs: 'center', lg: 'left' }
           }}
         >
-          <img src={`/img/info/moze-spektakl.jpg`} alt="" style={{ maxWidth: '100%' }} />
+          <img
+            src={`/img/info/moze-spektakl.jpg`}
+            alt="speltakl improwizowany"
+            style={{ maxWidth: '100%' }}
+          />
         </Grid>
       </Grid>
     </Grid>

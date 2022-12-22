@@ -38,7 +38,7 @@ const IntegrationBenefitsComponent = ({ scrollTo }: PageProps): JSX.Element => {
   return (
     <Grid item xs={12} py={6} px={2}>
       <Box className="maxWidth">
-        <Typography variant="h1" textAlign="center">
+        <Typography variant="h2" textAlign="center">
           <Box component="span" color={Colors.mainOrange}>
             Najlepsza integracja{' '}
           </Box>

@@ -5,7 +5,7 @@ const PaymentConfirmation = (): JSX.Element => {
     <Grid container justifyContent="center" m={2}>
       <Grid container item xs={12}>
         <Grid item xs={12}>
-          <Typography variant="h2" mb={2}>
+          <Typography variant="h3" mb={2}>
             Dziękujmy za wpłate!
           </Typography>
         </Grid>

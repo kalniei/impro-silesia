@@ -35,7 +35,7 @@ const IntegrationInformationComponentTwo = ({ scrollTo }: PageProps): JSX.Elemen
     <>
       <Grid item xs={12} py={6} px={2}>
         <Box className="maxWidth">
-          <Typography variant="h1" textAlign="center" mb={4}>
+          <Typography variant="h2" textAlign="center" mb={4}>
             <Box component="span" color={Colors.mainOrange}>
               Jak wygldają{' '}
             </Box>

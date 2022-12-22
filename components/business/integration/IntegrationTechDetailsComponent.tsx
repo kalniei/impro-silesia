@@ -46,7 +46,7 @@ const IntegrationTechDetailsComponent = ({ scrollTo }: PageProps): JSX.Element =
   return (
     <Grid item xs={12} py={6} px={2}>
       <Box className="maxWidth">
-        <Typography variant="h1" textAlign="center">
+        <Typography variant="h2" textAlign="center">
           <Box component="span" color={Colors.mainOrange}>
             WARSZTATY INTEGRACYJNE{' '}
           </Box>
@@ -60,7 +60,7 @@ const IntegrationTechDetailsComponent = ({ scrollTo }: PageProps): JSX.Element =
           <Grid item xs={12} sm={6} md={3} textAlign="center" sx={{ mt: { xs: 2, md: 0 } }} px={2}>
             <Card className={classes.cardBox}>
               <CardContent>
-                <Image src={`/img/icons/clock.png`} width="46px" height="46px" alt="" />
+                <Image src={`/img/icons/clock.png`} width="46px" height="46px" alt="impro clock" />
                 <Typography className={classes.typoOne}>Czas trwania</Typography>
                 <Typography className={classes.typoTwo}>1,5h - 6h</Typography>
                 <Typography className={classes.typoThree} mb={2}>
@@ -73,7 +73,7 @@ const IntegrationTechDetailsComponent = ({ scrollTo }: PageProps): JSX.Element =
           <Grid item xs={12} sm={6} md={3} textAlign="center" sx={{ mt: { xs: 2, md: 0 } }} px={2}>
             <Card className={classes.cardBox}>
               <CardContent>
-                <Image src={`/img/icons/team.png`} width="46px" height="46px" alt="" />
+                <Image src={`/img/icons/team.png`} width="46px" height="46px" alt="impro team" />
                 <Typography className={classes.typoOne}>WIELKOŚĆ GRUPY</Typography>
                 <Typography className={classes.typoTwo}>3 - 20 os.</Typography>
                 <Typography className={classes.typoThree}>najczęściej ok.12</Typography>
@@ -85,7 +85,12 @@ const IntegrationTechDetailsComponent = ({ scrollTo }: PageProps): JSX.Element =
           <Grid item xs={12} sm={6} md={3} textAlign="center" sx={{ mt: { xs: 2, md: 0 } }} px={2}>
             <Card className={classes.cardBox}>
               <CardContent>
-                <Image src={`/img/icons/location.png`} width="46px" height="46px" alt="" />
+                <Image
+                  src={`/img/icons/location.png`}
+                  width="46px"
+                  height="46px"
+                  alt="impro location"
+                />
                 <Typography className={classes.typoOne}>LOKALIZACJA</Typography>
                 <Typography className={classes.typoTwo}>u nas / u was</Typography>
                 <Typography className={classes.typoThree}>a nawet online</Typography>
@@ -97,7 +102,12 @@ const IntegrationTechDetailsComponent = ({ scrollTo }: PageProps): JSX.Element =
           <Grid item xs={12} sm={6} md={3} textAlign="center" sx={{ mt: { xs: 2, md: 0 } }} px={2}>
             <Card className={classes.cardBox}>
               <CardContent>
-                <Image src={`/img/icons/language.png`} width="46px" height="46px" alt="" />
+                <Image
+                  src={`/img/icons/language.png`}
+                  width="46px"
+                  height="46px"
+                  alt="impro language"
+                />
                 <Typography className={classes.typoOne}>Język</Typography>
                 <Typography className={classes.typoTwo}>polski/angielski</Typography>
                 <Typography className={classes.typoThree} mb={2}>

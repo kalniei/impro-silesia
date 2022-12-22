@@ -72,7 +72,7 @@ const PaymentGeneral = (): JSX.Element => {
       {workshopDetails && (
         <Grid container item xs={12}>
           <Grid item xs={12}>
-            <Typography variant="h2" mb={2}>
+            <Typography variant="h3" mb={2}>
               Witamy w naszym systemie płatnośći!
             </Typography>
 

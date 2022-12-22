@@ -91,10 +91,10 @@ const SingleWorkshop = ({ incomingWorkshops }: PageProps): JSX.Element => {
           >
             <AccordionSummary>
               <Grid container item>
-                <Typography variant="h2" component="span">
+                <Typography variant="h3" component="span">
                   {workshopDetails.name} -
                 </Typography>
-                <Typography variant="h2" component="span" fontWeight="400" pl={1}>
+                <Typography variant="h3" component="span" fontWeight="400" pl={1}>
                   {workshopDetails.day_of_week}
                 </Typography>
               </Grid>

@@ -37,12 +37,12 @@ const SchoolBenefitsComponent = ({ scrollToWorkshops }: PageProps): JSX.Element 
   return (
     <Grid item xs={12} py={6} px={2}>
       <Box className="maxWidth">
-        <Typography variant="h1" textAlign="center">
+        <Typography variant="h2" textAlign="center">
           Naucz się impro i zdobądź:
         </Typography>
         <InfoElements infoArray={benefitsArr} />
         <Grid container justifyContent="center">
-          <Typography variant="h1" display="block" textAlign="center" mt={8}>
+          <Typography variant="h2" display="block" textAlign="center" mt={8}>
             W życiu, biznesie i na scenie!
           </Typography>
         </Grid>

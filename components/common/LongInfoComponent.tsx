@@ -17,7 +17,11 @@ const LongInfoComponent = ({ infoObj, scrollTo }: PageProps): JSX.Element => {
         )}
         <Grid container my={4}>
           <Grid item xs={12} md={6} textAlign="center">
-            <img src={`/img/info/${infoObj.imgName}`} alt="" style={{ maxWidth: '100%' }} />
+            <img
+              src={`/img/info/${infoObj.imgName}`}
+              alt={infoObj.imgName}
+              style={{ maxWidth: '100%' }}
+            />
           </Grid>
           <Grid item xs={12} md={6} sx={{ pl: { sm: 0, md: 2 }, pt: { xs: 4, sm: 4, md: 0 } }}>
             <Box sx={{ fontSize: { xs: 16, sm: 20, md: 18, lg: 20 } }}>

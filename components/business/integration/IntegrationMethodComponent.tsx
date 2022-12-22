@@ -29,7 +29,7 @@ const IntegrationMethodComponent = ({ scrollTo }: PageProps): JSX.Element => {
   return (
     <Grid item xs={12} py={6} px={2}>
       <Box className="maxWidth">
-        <Typography variant="h1" textAlign="center" mb={4}>
+        <Typography variant="h2" textAlign="center" mb={4}>
           Impro - metoda polecana{' '}
           <Box component="span" color={Colors.mainOrange}>
             przez najlepszych
@@ -49,7 +49,11 @@ const IntegrationMethodComponent = ({ scrollTo }: PageProps): JSX.Element => {
                   );
                 }}
               >
-                <img className={classes.clickableImage} src={`/img/info/forbes.jpg`} alt="" />
+                <img
+                  className={classes.clickableImage}
+                  src={`/img/info/forbes.jpg`}
+                  alt="impro forbs"
+                />
                 <Typography
                   color={Colors.mainOrange}
                   fontSize={13}
@@ -69,7 +73,11 @@ const IntegrationMethodComponent = ({ scrollTo }: PageProps): JSX.Element => {
                   goToLink('https://grow.stanford.edu/browse/leading-with-an-improv-mindset/');
                 }}
               >
-                <img src={`/img/info/stanford.jpg`} alt="" className={classes.clickableImage} />
+                <img
+                  src={`/img/info/stanford.jpg`}
+                  alt="impro stanford"
+                  className={classes.clickableImage}
+                />
                 <Typography
                   color={Colors.mainOrange}
                   fontSize={13}
@@ -90,7 +98,11 @@ const IntegrationMethodComponent = ({ scrollTo }: PageProps): JSX.Element => {
                   );
                 }}
               >
-                <img src={`/img/info/cnnbusiness.jpg`} alt="" className={classes.clickableImage} />
+                <img
+                  src={`/img/info/cnnbusiness.jpg`}
+                  alt="impro cnnbusiness"
+                  className={classes.clickableImage}
+                />
                 <Typography
                   color={Colors.mainOrange}
                   fontSize={13}

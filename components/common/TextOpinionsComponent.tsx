@@ -38,7 +38,7 @@ const TextOpinionsComponent = (): JSX.Element => {
       }}
     >
       <Box className="maxWidth">
-        <Typography variant="h1" textAlign="center" color={Colors.white}>
+        <Typography variant="h2" textAlign="center" color={Colors.white}>
           Opinie!!!
         </Typography>
         <Grid container>

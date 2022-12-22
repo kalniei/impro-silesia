@@ -19,8 +19,26 @@ function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
       <Head>
-        <title>Impro Silesia</title>
+        <title>Impro Silesia - Improwizacja na Śląsku</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta
+          name="description"
+          content="Śląskie Centrum Improwizacji - warsztaty, wydarzenia, Otwarta Scena! Promujemy impro na śląsku, tworzymy środowisko, uczymy technik improwizacji, które możesz wykorzystać na scenie, w biznesie i w życiu. Impro Śląsk, Impro Katowice, Impro Silesia"
+        />
+        <meta property="og:url" content="https://improsilesia.pl/" />
+        <meta property="og:title" content="Impro Silesia" />
+        <meta
+          property="og:description"
+          content="Śląskie Centrum Improwizacji - warsztaty, wydarzenia, Otwarta Scena!"
+        />
+        <meta property="og:image" content="https://improsilesia.pl/static/logo.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+          name="google-site-verification"
+          content="Z_FR2tWKnUFlR9N991OQDQGGXhlai2hgi_ERrR1MjDA"
+        />
       </Head>
       <StyledEngineProvider injectFirst>
         <SnackbarProvider>

@@ -17,7 +17,7 @@ const BannerComponent = ({
     <Grid item xs={12} sx={{ backgroundColor: Colors.black, position: 'relative' }}>
       <img
         src={`/img/banners/${bannerObj.imgPath}`}
-        alt=""
+        alt={bannerObj.mainHeader}
         style={{ maxWidth: '100%', display: 'block', margin: '0 auto' }}
       />
       <Box
@@ -30,7 +30,7 @@ const BannerComponent = ({
         <Grid container className="maxWidth" sx={{ pl: { xs: 4, sm: 6, md: 8 } }}>
           <Grid item xs={12}>
             <Typography
-              variant="h1"
+              variant="h2"
               color={Colors.mainOrange}
               sx={{ fontSize: { xs: 24, sm: 38, md: 50, lg: 60 } }}
             >
@@ -39,7 +39,7 @@ const BannerComponent = ({
           </Grid>
           <Grid item xs={12}>
             <Typography
-              variant="h1"
+              variant="h2"
               color={Colors.white}
               sx={{ fontSize: bannerObj.secondaryHeaderFont }}
             >
@@ -48,7 +48,7 @@ const BannerComponent = ({
           </Grid>
           <Grid item xs={12} sx={{ mt: { xs: 2, sm: 3, md: 4, lg: 6 } }}>
             <Typography
-              variant="h2"
+              variant="h3"
               textTransform="none"
               fontWeight="500"
               color={Colors.white}

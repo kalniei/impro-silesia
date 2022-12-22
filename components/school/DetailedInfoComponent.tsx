@@ -72,7 +72,7 @@ const DetailedInfoComponent = ({ scrollToWorkshops }: PageProps): JSX.Element =>
               <CardContent>
                 <Grid container>
                   <Grid item mt={2} mb={3} pl={2} xs={12}>
-                    <Typography variant="h1">{x.title}</Typography>
+                    <Typography variant="h2">{x.title}</Typography>
                   </Grid>
                   <Grid item sx={{ pl: { xs: 1, sm: 2, md: 4 } }} xs={12}>
                     {x.positions.map((item: string, index: number) => (

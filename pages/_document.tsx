@@ -5,12 +5,11 @@ import ServerStyleSheets from '@mui/styles/ServerStyleSheets';
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="pl">
         <Head>
           {/* PWA primary color */}
-          <meta name="description" content="Test" />
-          <link rel="icon" href="/favicon.png" />
           <meta name="theme-color" content={theme.palette.primary.main} />
+
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600i,600,700"

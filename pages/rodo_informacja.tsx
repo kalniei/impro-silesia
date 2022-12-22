@@ -4,7 +4,7 @@ const RodoPage = (): JSX.Element => {
   return (
     <Grid container py={4} px={8}>
       <Grid item xs={12}>
-        <Typography variant="h2">Informacje na temat przetwarzania danych osobowych</Typography>
+        <Typography variant="h3">Informacje na temat przetwarzania danych osobowych</Typography>
       </Grid>
 
       <Grid item xs={12} mt={2}>
@@ -40,7 +40,7 @@ const RodoPage = (): JSX.Element => {
       </Grid>
 
       <Grid item xs={12}>
-        <Typography variant="h2">Information on the processing of personal data</Typography>
+        <Typography variant="h3">Information on the processing of personal data</Typography>
       </Grid>
 
       <Grid item xs={12} mt={2}>
