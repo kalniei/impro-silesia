@@ -1,7 +1,9 @@
-import MainPage from '../components/MainPage';
+import BusinessIntegrations from '../components/business/BusinessIntegrations';
+// import MainPage from '../components/MainPage';
 
 const LandingPage = (): JSX.Element => {
-  return <MainPage />;
+  // return <MainPage />;
+  return <BusinessIntegrations />;
 };
 
 export default LandingPage;

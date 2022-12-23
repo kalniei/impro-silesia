@@ -15,9 +15,10 @@ import IntegrationTechDetailsComponent from './integration/IntegrationTechDetail
 const bannerObj: IBannerObj = {
   mainHeader: '2 tony integracji',
   secondaryHeader: 'dzięki improwizacji',
-  secondaryHeaderFont: { xs: 21.5, sm: 34, md: 45, lg: 53.5 },
+  secondaryHeaderFont: { xs: 25, sm: 34, md: 45, lg: 53.5 },
   bodyText: 'Prawdopodobnie najlepsza <br /> integracja dla Waszego zespołu!',
   imgPath: 'integracjaDlaFirm.jpg',
+  imgPathMobile: 'integracjaDlaFirm_mobile.jpg',
   orangeButtonName: 'Skontaktuj się',
   whiteButtonName: 'Dowiedz się więcej'
 };

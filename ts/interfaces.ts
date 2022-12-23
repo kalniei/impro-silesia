@@ -36,6 +36,7 @@ export interface IBannerObj {
   secondaryHeaderFont: object,
   bodyText: string,
   imgPath: string,
+  imgPathMobile?: string,
   orangeButtonName: string,
   whiteButtonName: string,
 }
