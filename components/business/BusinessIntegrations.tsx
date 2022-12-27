@@ -5,7 +5,7 @@ import BannerComponent from '../common/BannerComponent';
 import VideoOpinions from '../common/VideoOpinions';
 import ContactMain from '../contact/ContactMain';
 import IntegrationBenefitsComponent from './integration/IntegrationBenefitsComponent';
-import IntegrationBenefitsTwoComponent from './integration/IntegrationBenefitsTwoComponent copy';
+import IntegrationBenefitsTwoComponent from './integration/IntegrationBenefitsTwoComponent';
 import IntegrationInformationComponentOne from './integration/IntegrationInformationComponentOne';
 import IntegrationInformationComponentTwo from './integration/IntegrationInformationComponentTwo';
 import IntegrationMethodComponent from './integration/IntegrationMethodComponent';

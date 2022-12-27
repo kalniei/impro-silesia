@@ -136,6 +136,14 @@ theme = createTheme(theme ,{
         fontSize: '14px',
       },
     },
+    subtitle1: {
+      color: Colors.grey,
+      fontWeight: 600,
+      fontSize: '16px',
+      marginBottom: 3,
+      textAlign:"center",
+      textTransform: 'uppercase'
+    },
     subtitle2: {
       color: Colors.grey,
       fontWeight: 600,
