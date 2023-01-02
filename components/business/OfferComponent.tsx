@@ -36,7 +36,10 @@ const OfferComponent = ({ scrollToContact }: PageProps): JSX.Element => {
     <Grid item xs={12} py={6} px={2}>
       <Box className="maxWidth">
         <Typography variant="h2" textAlign="center">
-          Improwizacja może zagościć u ciebie w różnej formie:
+          Improwizacja może{' '}
+          <Box component="span" color={Colors.mainOrange}>
+            zagościć u ciebie w różnej formie:
+          </Box>
         </Typography>
         <Typography variant="subtitle1">
           Możemy działać bardzo poważnie i poważnie śmiesznie!

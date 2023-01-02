@@ -11,6 +11,7 @@ interface PageProps {
 
 const useStyles = makeStyles({
   clickableCard: {
+    maxWidth: '300px',
     border: `2px solid ${Colors.mainOrange}`,
     borderBottomWidth: '8px',
     borderRadius: '20px',
@@ -30,14 +31,14 @@ const ActionElements = ({ infoArray }: PageProps): JSX.Element => {
   };
 
   return (
-    <Grid container>
+    <Grid container justifyContent="center">
       {infoArray.map((x: IActionObj, key: number) => (
         <Grid
           key={key}
           container
           justifyContent="center"
           item
-          md={6}
+          md={4}
           sm={6}
           xs={12}
           sx={{ mt: { xs: 4, sm: 6, md: 8 }, px: 3 }}
