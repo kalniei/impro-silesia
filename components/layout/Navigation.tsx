@@ -105,7 +105,7 @@ const Navigation = (): JSX.Element => {
                 key={item.path}
                 sx={{
                   fontSize: 16,
-                  color: router?.asPath === item.path ? Colors.black : Colors.mainOrange,
+                  color: router?.asPath === item.path ? Colors.white : Colors.mainOrange,
                   mr: 2
                 }}
                 endIcon={item.elements && item.elements.length > 0 ? <KeyboardArrowDownIcon /> : ''}
@@ -122,7 +122,7 @@ const Navigation = (): JSX.Element => {
 
   return (
     <Box sx={{ display: 'flex' }} id="back-to-top-anchor">
-      <AppBar component="nav" color="simpleWhite">
+      <AppBar component="nav" color="simpleBlack">
         <Toolbar>
           <Grid container justifyContent="flex-end">
             <Grid item>

@@ -8,13 +8,13 @@ declare module '@mui/material/styles' {
   interface Palette {
     neutral: Palette['primary'];
     basic: Palette['primary'];
-    simpleWhite: Palette['primary'];
+    simpleBlack: Palette['primary'];
   }
 
   interface PaletteOptions {
     neutral?: PaletteOptions['primary'];
     basic?: PaletteOptions['primary'];
-    simpleWhite?: PaletteOptions['primary'];
+    simpleBlack?: PaletteOptions['primary'];
   }
 }
 
@@ -26,7 +26,7 @@ declare module '@mui/material/TextField' {
 
 declare module '@mui/material/AppBar' {
   interface AppBarPropsColorOverrides {
-    simpleWhite: true;
+    simpleBlack: true;
   }
 }
 
@@ -70,9 +70,9 @@ theme = createTheme(theme ,{
       main: Colors.mainOrange,
       contrastText: Colors.white
     },
-    simpleWhite: {
-      main: Colors.white,
-      contrastText: Colors.black
+    simpleBlack: {
+      main: Colors.black,
+      contrastText: Colors.white
     },
   },
   typography: {

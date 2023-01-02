@@ -25,9 +25,10 @@ export interface IOpinionsObj {
 
 export interface IActionObj {
   imgName: string;
-  text: string;
-  actionText: string;
+  mainText: string;
+  secondaryText?: string;
   actionPath: string;
+  isOrange: boolean;
 }
 
 export interface IBannerObj {
